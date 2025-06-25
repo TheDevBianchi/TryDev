@@ -191,6 +191,29 @@ const aiServicesPricing = [
     }
   ];
 
+const webDevPricing = [
+    {
+      service: "Landing Page Profesional",
+      description: "Una página de aterrizaje optimizada para conversiones, con diseño moderno y totalmente responsiva.",
+      price: "Desde $299",
+    },
+    {
+      service: "Sitio Web Corporativo",
+      description: "Un sitio web completo con múltiples secciones (Inicio, Sobre Nosotros, Servicios, Contacto) para presentar tu negocio.",
+      price: "Desde $599",
+    },
+    {
+      service: "Tienda de E-commerce",
+      description: "Una plataforma de comercio electrónico robusta con carrito de compras, gestión de productos y pasarelas de pago.",
+      price: "Desde $1,199",
+    },
+    {
+      service: "Aplicación Web (SaaS)",
+      description: "Desarrollo de una solución de Software como Servicio a medida, escalable y segura para tu modelo de negocio.",
+      price: "Contactar",
+    }
+  ];
+
 const webDevProjectTypes = [
   {
     title: "Landing Pages y Sitios Web",
@@ -702,6 +725,36 @@ export default function ServicePage({ params }: Props) {
                 ))}
               </div>
             </div>
+
+             <div data-animate className="text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent sm:text-4xl">
+                Precios de Desarrollo Web
+              </h2>
+              <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+                Soluciones transparentes y adaptadas a cada proyecto. Los precios son de partida y pueden ajustarse según la complejidad y funcionalidades requeridas.
+              </p>
+              <Card className="mt-12 max-w-4xl mx-auto bg-white/5 border border-white/10 text-left">
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead className="w-[300px] text-foreground font-semibold">Tipo de Proyecto</TableHead>
+                      <TableHead className="text-foreground font-semibold">Descripción</TableHead>
+                      <TableHead className="text-right text-foreground font-semibold">Precio Inicial</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {webDevPricing.map((item) => (
+                      <TableRow key={item.service} className="border-white/10">
+                        <TableCell className="font-medium">{item.service}</TableCell>
+                        <TableCell className="text-muted-foreground">{item.description}</TableCell>
+                        <TableCell className="text-right font-bold text-primary">{item.price}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </Card>
+            </div>
+
           </div>
         )}
 
