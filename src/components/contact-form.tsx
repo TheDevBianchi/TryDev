@@ -57,22 +57,58 @@ export function ContactForm() {
           Hablemos sobre cómo puedo ayudarte a llevar tu proyecto al siguiente nivel.
         </p>
       </div>
-      <form ref={formRef} action={formAction} className="space-y-6 text-left">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div className="space-y-2">
-            <Label htmlFor="name">Nombre</Label>
-            <Input id="name" name="name" placeholder="Tu Nombre" required className="bg-transparent border-white/20 focus:border-primary"/>
+      <form ref={formRef} action={formAction} className="space-y-10 text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div className="relative group">
+            <Input 
+              id="name" 
+              name="name" 
+              type="text"
+              required 
+              className="peer w-full h-10 bg-transparent border-0 border-b-2 border-white/20 focus:border-primary transition-colors duration-300 text-foreground placeholder:text-transparent focus:outline-none focus:ring-0 rounded-none px-1"
+              placeholder="Nombre"
+            />
+            <Label 
+              htmlFor="name" 
+              className="absolute left-1 text-muted-foreground transition-all duration-300 pointer-events-none peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-primary peer-focus:text-sm peer-[:not(:placeholder-shown)]:-top-3.5 peer-[:not(:placeholder-shown)]:text-primary peer-[:not(:placeholder-shown)]:text-sm"
+            >
+              Nombre
+            </Label>
           </div>
-          <div className="space-y-2">
-            <Label htmlFor="email">Correo Electrónico</Label>
-            <Input id="email" name="email" type="email" placeholder="tu@email.com" required className="bg-transparent border-white/20 focus:border-primary"/>
+          <div className="relative group">
+            <Input 
+              id="email" 
+              name="email" 
+              type="email" 
+              required 
+              className="peer w-full h-10 bg-transparent border-0 border-b-2 border-white/20 focus:border-primary transition-colors duration-300 text-foreground placeholder:text-transparent focus:outline-none focus:ring-0 rounded-none px-1"
+              placeholder="Correo Electrónico"
+            />
+            <Label 
+              htmlFor="email" 
+              className="absolute left-1 text-muted-foreground transition-all duration-300 pointer-events-none peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-primary peer-focus:text-sm peer-[:not(:placeholder-shown)]:-top-3.5 peer-[:not(:placeholder-shown)]:text-primary peer-[:not(:placeholder-shown)]:text-sm"
+            >
+              Correo Electrónico
+            </Label>
           </div>
         </div>
-        <div className="space-y-2">
-          <Label htmlFor="message">Mensaje</Label>
-          <Textarea id="message" name="message" placeholder="Describe tu idea o proyecto..." required minLength={10} className="min-h-[150px] bg-transparent border-white/20 focus:border-primary" />
+        <div className="relative group">
+          <Textarea 
+            id="message" 
+            name="message" 
+            required 
+            minLength={10} 
+            className="peer w-full bg-transparent border-0 border-b-2 border-white/20 focus:border-primary transition-colors duration-300 text-foreground placeholder:text-transparent focus:outline-none focus:ring-0 rounded-none min-h-[120px] px-1 pt-2"
+            placeholder="Mensaje"
+          />
+          <Label 
+            htmlFor="message" 
+            className="absolute left-1 text-muted-foreground transition-all duration-300 pointer-events-none peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-focus:-top-3.5 peer-focus:text-primary peer-focus:text-sm peer-[:not(:placeholder-shown)]:-top-3.5 peer-[:not(:placeholder-shown)]:text-primary peer-[:not(:placeholder-shown)]:text-sm"
+          >
+            Mensaje
+          </Label>
         </div>
-        <div className="text-center">
+        <div className="text-center pt-4">
           <SubmitButton />
         </div>
       </form>
