@@ -1,4 +1,4 @@
-import { CodeXml, ServerCog, BrainCircuit, DatabaseZap, LucideIcon } from 'lucide-react';
+import { Ticket, ServerCog, BrainCircuit, DatabaseZap, LucideIcon } from 'lucide-react';
 
 export type Service = {
   slug: string;
@@ -13,20 +13,20 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    slug: 'desarrollo-frontend',
-    title: 'Desarrollo Frontend',
-    shortDescription: 'Creando interfaces de usuario atractivas, responsivas y de alto rendimiento que cautivan a tus usuarios y elevan tu marca.',
-    description: 'Construyo interfaces de usuario modernas, interactivas y de alto rendimiento utilizando las últimas tecnologías web. Mi enfoque es crear experiencias de usuario fluidas que sean visualmente atractivas y altamente funcionales.',
-    icon: CodeXml,
+    slug: 'plataforma-de-rifas',
+    title: 'Plataforma de Rifas Online',
+    shortDescription: 'Lanza sorteos y rifas de forma segura y transparente con una plataforma personalizada, automatizada y fácil de gestionar.',
+    description: 'Desarrollo plataformas de rifas online completas y a medida. Desde la venta de boletos y la integración con pasarelas de pago, hasta la selección aleatoria de ganadores y la notificación automática. Ofrece a tus usuarios una experiencia segura, transparente y emocionante.',
+    icon: Ticket,
     details: [
-      'Experiencia en React, Next.js y Vue.js',
-      'Gestión de estado con Redux o Zustand',
-      'Diseño responsivo para todos los dispositivos',
-      'Optimización del rendimiento y tiempos de carga rápidos',
-      'Código accesible (a11y) y amigable para SEO'
+      'Venta y gestión de boletos personalizables',
+      'Integración con pasarelas de pago seguras (Stripe, Mercado Pago)',
+      'Sistema de selección de ganadores aleatorio y verificable',
+      'Panel de administración para gestionar rifas y usuarios',
+      'Diseño 100% responsivo y adaptado a tu marca'
     ],
     imageUrl: 'https://placehold.co/1200x800.png',
-    imageAlt: 'Captura de pantalla de una interfaz de desarrollo frontend',
+    imageAlt: 'Interfaz de una plataforma de rifas online',
   },
   {
     slug: 'desarrollo-backend',
