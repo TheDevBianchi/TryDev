@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { services, getServiceBySlug } from '@/lib/services';
 import type { Metadata } from 'next';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle2, User, PanelTop, ShoppingCart, CreditCard, History, FileText, BarChart, Ticket, Settings, ShieldCheck, Users, Megaphone, Lock } from 'lucide-react';
+import { CheckCircle2, XCircle, User, PanelTop, ShoppingCart, CreditCard, History, FileText, BarChart, Ticket, Settings, ShieldCheck, Users, Megaphone, Lock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card } from '@/components/ui/card';
@@ -203,11 +203,13 @@ export default function ServicePage({ params }: Props) {
                 <Card className="p-8 flex flex-col bg-white/5 border border-white/10 rounded-xl h-full">
                   <h3 className="text-2xl font-bold text-foreground">Alquiler Mensual</h3>
                   <p className="mt-4 text-4xl font-bold text-primary">$75 <span className="text-lg font-medium text-muted-foreground">/mes</span></p>
-                  <p className="mt-4 text-muted-foreground flex-grow">Ideal para rifas recurrentes. Acceso completo a la plataforma mientras tu suscripción esté activa.</p>
+                  <p className="mt-4 text-muted-foreground flex-grow">Ideal para rifas recurrentes. Acceso a la plataforma mientras tu suscripción esté activa.</p>
                   <ul className="mt-8 space-y-4 text-left">
-                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Funcionalidades estándar</span></li>
-                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Soporte técnico 24/7</span></li>
-                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>1,000 correos de notificación / mes</span></li>
+                    <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-1" /><span>Funcionalidades estándar</span></li>
+                    <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-1" /><span>Soporte técnico 24/7</span></li>
+                    <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-1" /><span>Envíos de correo gratuitos (1,000/mes)</span></li>
+                    <li className="flex items-start gap-3"><XCircle className="h-5 w-5 text-muted-foreground/60 mt-1 flex-shrink-0" /><span>Herramientas de Marketing (Básico)</span></li>
+                    <li className="flex items-start gap-3"><XCircle className="h-5 w-5 text-muted-foreground/60 mt-1 flex-shrink-0" /><span>Personalización de la Plataforma (Limitada)</span></li>
                   </ul>
                   <Button asChild variant="outline" size="lg" className="mt-8 w-full border-accent/50 text-accent hover:bg-accent/10 hover:text-accent hover:border-accent">
                     <Link href="/contact">Contratar Plan</Link>
@@ -216,15 +218,17 @@ export default function ServicePage({ params }: Props) {
 
                 {/* One-Time Purchase (Featured) */}
                 <Card className="p-8 flex flex-col bg-white/5 border-2 border-primary rounded-xl relative overflow-hidden lg:scale-105 h-full">
-                  <Badge variant="default" className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 px-4 py-1">Más Popular</Badge>
-                  <h3 className="text-2xl font-bold text-foreground">Pago Único</h3>
-                  <p className="mt-4 text-4xl font-bold text-primary">$899 <span className="text-lg font-medium text-muted-foreground">pago único</span></p>
+                  <Badge variant="default" className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground">Más Popular</Badge>
+                  <h3 className="text-2xl font-bold text-foreground">Compra Completa</h3>
+                  <p className="mt-4 text-4xl font-bold text-primary">$899</p>
+                  <p className="text-base text-muted-foreground -mt-2 mb-4">(50% al iniciar y 50% al finalizar)</p>
                   <p className="mt-4 text-muted-foreground flex-grow">La solución definitiva. Compra la plataforma y adáptala sin límites a tu proyecto.</p>
                   <ul className="mt-8 space-y-4 text-left">
-                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Licencia de por vida y código fuente</span></li>
-                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Todas las funcionalidades incluidas</span></li>
-                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Soporte prioritario 24/7</span></li>
-                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Envíos de correo ilimitados</span></li>
+                    <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-1" /><span>Licencia de por vida y código fuente</span></li>
+                    <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-1" /><span>Todas las funcionalidades incluidas</span></li>
+                    <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-1" /><span>Soporte prioritario 24/7</span></li>
+                    <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-1" /><span>Envíos de correo gratuitos e ilimitados</span></li>
+                    <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-1" /><span>Integración con IA para ventas (WhatsApp/Telegram)</span></li>
                   </ul>
                   <Button asChild size="lg" className="mt-8 w-full bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/20 hover:opacity-90 transition-all duration-300">
                     <Link href="/contact">Comprar Ahora</Link>
@@ -237,9 +241,11 @@ export default function ServicePage({ params }: Props) {
                   <p className="mt-4 text-4xl font-bold text-primary">$150 <span className="text-lg font-medium text-muted-foreground">/rifa</span></p>
                   <p className="mt-4 text-muted-foreground flex-grow">Perfecto si realizas sorteos de forma ocasional. Paga solo por las rifas que necesites.</p>
                   <ul className="mt-8 space-y-4 text-left">
-                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Funcionalidades básicas por evento</span></li>
-                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Soporte técnico 8/5</span></li>
-                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>500 correos de notificación por rifa</span></li>
+                    <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-1" /><span>Funcionalidades básicas por evento</span></li>
+                    <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-1" /><span>Soporte técnico 8/5</span></li>
+                    <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-1" /><span>Envíos de correo gratuitos (500/rifa)</span></li>
+                    <li className="flex items-start gap-3"><XCircle className="h-5 w-5 text-muted-foreground/60 mt-1 flex-shrink-0" /><span>Herramientas de Marketing (No incluido)</span></li>
+                    <li className="flex items-start gap-3"><XCircle className="h-5 w-5 text-muted-foreground/60 mt-1 flex-shrink-0" /><span>Personalización de la Plataforma (No incluido)</span></li>
                   </ul>
                   <Button asChild variant="outline" size="lg" className="mt-8 w-full border-accent/50 text-accent hover:bg-accent/10 hover:text-accent hover:border-accent">
                     <Link href="/contact">Lanzar Rifa</Link>
