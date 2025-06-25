@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { services, getServiceBySlug } from '@/lib/services';
 import type { Metadata } from 'next';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle2, XCircle, User, PanelTop, ShoppingCart, CreditCard, History, FileText, BarChart, Ticket, Settings, ShieldCheck, Users, Megaphone, Lock } from 'lucide-react';
+import { CheckCircle2, XCircle, User, ShoppingCart, CreditCard, History, FileText, BarChart, Ticket, Settings, ShieldCheck, Users, Megaphone, Lock, MonitorSmartphone, LayoutTemplate } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card } from '@/components/ui/card';
@@ -45,8 +45,8 @@ const userFeatures = {
     { text: "Notificaciones: Alertas sobre el estado de las rifas y resultados.", icon: Megaphone },
   ],
   secciones: [
-      { text: "Home: Presentación de rifas destacadas y banner promocional.", icon: PanelTop },
-      { text: "Detalle de Rifa: Información completa sobre premios, reglas y números.", icon: PanelTop },
+      { text: "Home: Presentación de rifas destacadas y banner promocional.", icon: FileText },
+      { text: "Detalle de Rifa: Información completa sobre premios, reglas y números.", icon: FileText },
       { text: "Carrito de Compra: Gestión de tickets seleccionados.", icon: ShoppingCart },
       { text: "Métodos de Pago: Integración con diversas opciones de pago.", icon: CreditCard },
       { text: "Historial de Compras: Registro de todas las transacciones.", icon: History },
@@ -111,49 +111,57 @@ export default function ServicePage({ params }: Props) {
 
         {service.slug === 'plataforma-de-rifas' && (
           <div className="mt-24 md:mt-32 space-y-24">
-            {/* User Features Section */}
-            <div data-animate className="grid gap-12 items-center lg:grid-cols-2 lg:gap-24">
-              <div className="space-y-8">
-                <h2 className="text-3xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent sm:text-4xl">
-                  Características Principales
-                </h2>
+            
+            <div data-animate className="grid gap-12 items-start lg:grid-cols-2 lg:gap-24">
+              <div className="space-y-10">
+                <div className="space-y-4">
+                  <h2 className="text-3xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent sm:text-4xl">
+                    Una Experiencia de Usuario Impecable
+                  </h2>
+                  <p className="text-lg text-muted-foreground">
+                    Cada aspecto de la plataforma está diseñado pensando en la facilidad de uso, la seguridad y la estética, garantizando que tanto los organizadores como los participantes tengan una experiencia excepcional.
+                  </p>
+                </div>
                 
-                <div>
-                  <h3 className="text-xl font-semibold mb-4">Interfaz de Usuario</h3>
-                  <ul className="space-y-3">
-                    {userFeatures.interfaz.map((feature, index) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <feature.icon className="mt-1 h-5 w-5 flex-shrink-0 text-accent" />
-                        <span className="text-base text-muted-foreground">{feature.text}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <div className="space-y-8">
+                  <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+                    <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-3"><MonitorSmartphone className="text-accent" /> Interfaz de Usuario</h3>
+                    <ul className="space-y-3">
+                      {userFeatures.interfaz.map((feature, index) => (
+                        <li key={index} className="flex items-start gap-3">
+                          <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
+                          <span className="text-base text-muted-foreground">{feature.text}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-                <div>
-                  <h3 className="text-xl font-semibold mb-4">Funcionalidades para Usuarios</h3>
-                  <ul className="space-y-3">
-                    {userFeatures.funcionalidades.map((feature, index) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <feature.icon className="mt-1 h-5 w-5 flex-shrink-0 text-accent" />
-                        <span className="text-base text-muted-foreground">{feature.text}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                 <div>
-                  <h3 className="text-xl font-semibold mb-4">Secciones Principales</h3>
-                  <ul className="space-y-3">
-                    {userFeatures.secciones.map((feature, index) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <feature.icon className="mt-1 h-5 w-5 flex-shrink-0 text-accent" />
-                        <span className="text-base text-muted-foreground">{feature.text}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+                    <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-3"><Ticket className="text-accent" /> Funcionalidades para Usuarios</h3>
+                    <ul className="space-y-3">
+                      {userFeatures.funcionalidades.map((feature, index) => (
+                        <li key={index} className="flex items-start gap-3">
+                          <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
+                          <span className="text-base text-muted-foreground">{feature.text}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="p-6 rounded-xl bg-white/5 border border-white/10">
+                    <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-3"><LayoutTemplate className="text-accent" /> Secciones Principales</h3>
+                    <ul className="space-y-3">
+                      {userFeatures.secciones.map((feature, index) => (
+                        <li key={index} className="flex items-start gap-3">
+                          <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
+                          <span className="text-base text-muted-foreground">{feature.text}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
-              <div className="relative group">
+              <div className="relative group mt-8 lg:mt-0">
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur-lg opacity-25 group-hover:opacity-50 transition duration-1000 animate-pulse"></div>
                 <Card className="relative overflow-hidden rounded-xl bg-background/80 backdrop-blur-sm border-white/10 shadow-xl">
                   <Image src="https://placehold.co/1200x800.png" alt="Interfaz de usuario de la plataforma de rifas" width={1200} height={800} data-ai-hint="dashboard ui" className="rounded-lg object-cover" />
@@ -161,7 +169,6 @@ export default function ServicePage({ params }: Props) {
               </div>
             </div>
 
-            {/* Admin Panel Section */}
             <div data-animate className="grid gap-12 items-center lg:grid-cols-2 lg:gap-24">
                <div className="relative group order-last lg:order-first">
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur-lg opacity-25 group-hover:opacity-50 transition duration-1000 animate-pulse"></div>
@@ -178,7 +185,7 @@ export default function ServicePage({ params }: Props) {
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {adminFeatures.map((feature, index) => (
-                     <div key={index} className="flex items-start gap-4 p-4 rounded-lg bg-white/5">
+                     <div key={index} className="flex items-start gap-4 p-4 rounded-lg bg-white/5 border border-white/10 hover:border-accent/30 hover:bg-accent/10 transition-all duration-300 transform hover:-translate-y-1">
                       <feature.icon className="h-8 w-8 text-accent flex-shrink-0 mt-1" />
                       <div>
                         <h4 className="font-semibold text-foreground">{feature.title}</h4>
@@ -190,7 +197,6 @@ export default function ServicePage({ params }: Props) {
               </div>
             </div>
 
-            {/* Pricing Section */}
             <div data-animate className="mt-24 md:mt-32 text-center">
               <h2 className="text-3xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent sm:text-4xl">
                 Planes Flexibles para tu Proyecto
@@ -199,7 +205,6 @@ export default function ServicePage({ params }: Props) {
                 Elige el plan que mejor se adapte a tus necesidades, desde un lanzamiento único hasta una solución completa a largo plazo.
               </p>
               <div className="mt-16 grid max-w-6xl mx-auto gap-8 lg:grid-cols-3 items-start">
-                {/* Monthly Plan */}
                 <Card className="p-8 flex flex-col bg-white/5 border border-white/10 rounded-xl h-full">
                   <h3 className="text-2xl font-bold text-foreground">Alquiler Mensual</h3>
                   <p className="mt-4 text-4xl font-bold text-primary">$75 <span className="text-lg font-medium text-muted-foreground">/mes</span></p>
@@ -216,9 +221,8 @@ export default function ServicePage({ params }: Props) {
                   </Button>
                 </Card>
 
-                {/* One-Time Purchase (Featured) */}
-                <Card className="p-8 flex flex-col bg-white/5 border-2 border-primary rounded-xl relative lg:scale-105 h-full">
-                  <Badge variant="default" className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground z-10">Más Popular</Badge>
+                <Card className="p-8 flex flex-col bg-white/5 border-2 border-primary rounded-xl relative lg:scale-105 h-full z-10">
+                  <Badge variant="default" className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground">Más Popular</Badge>
                   <h3 className="text-2xl font-bold text-foreground">Compra Completa</h3>
                   <p className="mt-4 text-4xl font-bold text-primary">$899</p>
                   <p className="mt-4 text-muted-foreground flex-grow">La solución definitiva. Compra la plataforma y adáptala sin límites a tu proyecto.</p>
@@ -234,7 +238,6 @@ export default function ServicePage({ params }: Props) {
                   </Button>
                 </Card>
 
-                {/* Per Raffle Plan */}
                 <Card className="p-8 flex flex-col bg-white/5 border border-white/10 rounded-xl h-full">
                   <h3 className="text-2xl font-bold text-foreground">Por Rifa</h3>
                   <p className="mt-4 text-4xl font-bold text-primary">$150 <span className="text-lg font-medium text-muted-foreground">/rifa</span></p>
