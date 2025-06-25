@@ -163,7 +163,7 @@ export default function ServicePage({ params }: Props) {
 
             {/* Admin Panel Section */}
             <div data-animate className="grid gap-12 items-center lg:grid-cols-2 lg:gap-24">
-               <div className="relative group">
+               <div className="relative group order-last lg:order-first">
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur-lg opacity-25 group-hover:opacity-50 transition duration-1000 animate-pulse"></div>
                 <Card className="relative overflow-hidden rounded-xl bg-background/80 backdrop-blur-sm border-white/10 shadow-xl">
                   <Image src="https://placehold.co/1200x800.png" alt="Panel de administración de la plataforma" width={1200} height={800} data-ai-hint="analytics dashboard" className="rounded-lg object-cover" />
@@ -202,12 +202,12 @@ export default function ServicePage({ params }: Props) {
                 {/* Monthly Plan */}
                 <Card className="p-8 flex flex-col bg-white/5 border border-white/10 rounded-xl h-full">
                   <h3 className="text-2xl font-bold text-foreground">Alquiler Mensual</h3>
-                  <p className="mt-4 text-4xl font-bold text-primary">$50 <span className="text-lg font-medium text-muted-foreground">/mes</span></p>
+                  <p className="mt-4 text-4xl font-bold text-primary">$75 <span className="text-lg font-medium text-muted-foreground">/mes</span></p>
                   <p className="mt-4 text-muted-foreground flex-grow">Ideal para rifas recurrentes. Acceso completo a la plataforma mientras tu suscripción esté activa.</p>
                   <ul className="mt-8 space-y-4 text-left">
-                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Plataforma completa</span></li>
-                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Soporte técnico continuo</span></li>
-                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Actualizaciones incluidas</span></li>
+                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Funcionalidades estándar</span></li>
+                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Soporte técnico 24/7</span></li>
+                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>1,000 correos de notificación / mes</span></li>
                   </ul>
                   <Button asChild variant="outline" size="lg" className="mt-8 w-full border-accent/50 text-accent hover:bg-accent/10 hover:text-accent hover:border-accent">
                     <Link href="/contact">Contratar Plan</Link>
@@ -216,14 +216,15 @@ export default function ServicePage({ params }: Props) {
 
                 {/* One-Time Purchase (Featured) */}
                 <Card className="p-8 flex flex-col bg-white/5 border-2 border-primary rounded-xl relative overflow-hidden lg:scale-105 h-full">
-                  <Badge variant="secondary" className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1">Más Popular</Badge>
+                  <Badge variant="default" className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 px-4 py-1">Más Popular</Badge>
                   <h3 className="text-2xl font-bold text-foreground">Pago Único</h3>
-                  <p className="mt-4 text-4xl font-bold text-primary">$800 <span className="text-lg font-medium text-muted-foreground">pago único</span></p>
+                  <p className="mt-4 text-4xl font-bold text-primary">$899 <span className="text-lg font-medium text-muted-foreground">pago único</span></p>
                   <p className="mt-4 text-muted-foreground flex-grow">La solución definitiva. Compra la plataforma y adáptala sin límites a tu proyecto.</p>
                   <ul className="mt-8 space-y-4 text-left">
-                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Licencia de por vida</span></li>
-                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Código fuente completo</span></li>
-                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Personalización total</span></li>
+                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Licencia de por vida y código fuente</span></li>
+                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Todas las funcionalidades incluidas</span></li>
+                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Soporte prioritario 24/7</span></li>
+                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Envíos de correo ilimitados</span></li>
                   </ul>
                   <Button asChild size="lg" className="mt-8 w-full bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/20 hover:opacity-90 transition-all duration-300">
                     <Link href="/contact">Comprar Ahora</Link>
@@ -233,12 +234,12 @@ export default function ServicePage({ params }: Props) {
                 {/* Per Raffle Plan */}
                 <Card className="p-8 flex flex-col bg-white/5 border border-white/10 rounded-xl h-full">
                   <h3 className="text-2xl font-bold text-foreground">Por Rifa</h3>
-                  <p className="mt-4 text-4xl font-bold text-primary">$100 <span className="text-lg font-medium text-muted-foreground">/rifa</span></p>
+                  <p className="mt-4 text-4xl font-bold text-primary">$150 <span className="text-lg font-medium text-muted-foreground">/rifa</span></p>
                   <p className="mt-4 text-muted-foreground flex-grow">Perfecto si realizas sorteos de forma ocasional. Paga solo por las rifas que necesites.</p>
                   <ul className="mt-8 space-y-4 text-left">
-                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Activación por evento</span></li>
-                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Soporte durante la rifa</span></li>
-                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Configuración rápida</span></li>
+                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Funcionalidades básicas por evento</span></li>
+                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>Soporte técnico 8/5</span></li>
+                    <li className="flex items-center gap-3"><CheckCircle2 className="h-5 w-5 text-primary" /><span>500 correos de notificación por rifa</span></li>
                   </ul>
                   <Button asChild variant="outline" size="lg" className="mt-8 w-full border-accent/50 text-accent hover:bg-accent/10 hover:text-accent hover:border-accent">
                     <Link href="/contact">Lanzar Rifa</Link>
