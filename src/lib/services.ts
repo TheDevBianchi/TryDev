@@ -1,4 +1,4 @@
-import { Ticket, ServerCog, BrainCircuit, DatabaseZap, LucideIcon } from 'lucide-react';
+import { Ticket, BrainCircuit, DatabaseZap, LucideIcon, Warehouse } from 'lucide-react';
 
 export type Service = {
   slug: string;
@@ -16,7 +16,7 @@ export const services: Service[] = [
     slug: 'plataforma-de-rifas',
     title: 'Plataforma de Rifas Online',
     shortDescription: 'Lanza sorteos y rifas de forma segura y transparente con una plataforma personalizada, automatizada y fácil de gestionar.',
-    description: 'Desarrollo plataformas de rifas online completas y a medida. Desde la venta de boletos, hasta la selección aleatoria de ganadores y la notificación automática. Ofrece a tus usuarios una experiencia segura, transparente y emocionante.',
+    description: 'Desarrollo plataformas de rifas online completas y a medida, eliminando la necesidad de integrar pasarelas de pago externas. Desde la venta de boletos, hasta la selección aleatoria de ganadores y la notificación automática. Ofrece a tus usuarios una experiencia segura, transparente y emocionante.',
     icon: Ticket,
     details: [
       'Venta y gestión de boletos personalizables',
@@ -28,20 +28,19 @@ export const services: Service[] = [
     imageAlt: 'Interfaz de una plataforma de rifas online',
   },
   {
-    slug: 'desarrollo-backend',
-    title: 'Desarrollo Backend',
-    shortDescription: 'Construyendo la lógica del servidor robusta, segura y escalable que impulsa tu aplicación, asegurando un rendimiento óptimo.',
-    description: 'Desarrollo sistemas backend seguros, eficientes y escalables para potenciar tus aplicaciones. Desde APIs RESTful hasta complejos pipelines de procesamiento de datos, aseguro que tu lógica del lado del servidor sea confiable y de alto rendimiento.',
-    icon: ServerCog,
+    slug: 'sistemas-de-inventario',
+    title: 'Sistemas de Inventario',
+    shortDescription: 'Optimiza la gestión de tu negocio con un sistema de inventario a medida, centralizando el control de stock, ventas y proveedores.',
+    description: 'Desarrollo soluciones de software personalizadas para la gestión de inventarios que te permiten tener un control total sobre tus productos. Optimiza tus operaciones, reduce pérdidas y toma decisiones informadas con un sistema robusto y fácil de usar.',
+    icon: Warehouse,
     details: [
-      'Desarrollo con Node.js, Express y NestJS',
-      'Diseño y gestión de bases de datos (SQL y NoSQL)',
-      'Diseño de API (REST, GraphQL)',
-      'Sistemas de autenticación y autorización',
-      'Despliegue en la nube (Firebase, AWS, Vercel)'
+      'Control de stock en tiempo real',
+      'Gestión de compras y proveedores',
+      'Generación de reportes de ventas y stock',
+      'Integración con puntos de venta (POS)'
     ],
     imageUrl: 'https://placehold.co/1200x800.png',
-    imageAlt: 'Diagrama de una arquitectura de backend',
+    imageAlt: 'Dashboard de un sistema de inventario',
   },
     {
     slug: 'integracion-ia',
