@@ -1,34 +1,13 @@
 import Link from "next/link"
 import { Github, Twitter, Linkedin } from "lucide-react"
 
-function MountainIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
-    </svg>
-  )
-}
-
-
 export function Footer() {
   return (
-    <footer className="w-full border-t border-border/40 bg-background/95">
+    <footer className="w-full border-t border-white/10 bg-background/95">
       <div className="container mx-auto flex flex-col items-center justify-between gap-6 py-8 md:flex-row">
         <div className="flex flex-col items-center gap-2 md:items-start">
           <Link href="/" className="flex items-center gap-2">
-            <MountainIcon className="h-6 w-6" />
-            <span className="text-lg font-bold">Devfolio</span>
+            <span className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-fuchsia-500">Devfolio</span>
           </Link>
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Devfolio. Todos los derechos reservados.

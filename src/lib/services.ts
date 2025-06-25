@@ -1,9 +1,11 @@
+import { CodeXml, ServerCog, BrainCircuit, DatabaseZap, LucideIcon } from 'lucide-react';
+
 export type Service = {
   slug: string;
   title: string;
   shortDescription: string;
   description: string;
-  imageUrl: string;
+  icon: LucideIcon;
   details: string[];
 };
 
@@ -13,7 +15,7 @@ export const services: Service[] = [
     title: 'Desarrollo Frontend',
     shortDescription: 'Creando interfaces de usuario atractivas y responsivas.',
     description: 'Construyo interfaces de usuario modernas, interactivas y de alto rendimiento utilizando las últimas tecnologías web. Mi enfoque es crear experiencias de usuario fluidas que sean visualmente atractivas y altamente funcionales.',
-    imageUrl: 'https://placehold.co/1200x600.png',
+    icon: CodeXml,
     details: [
       'Experiencia en React, Next.js y Vue.js',
       'Gestión de estado con Redux o Zustand',
@@ -27,7 +29,7 @@ export const services: Service[] = [
     title: 'Desarrollo Backend',
     shortDescription: 'Construyendo aplicaciones del lado del servidor robustas y escalables.',
     description: 'Desarrollo sistemas backend seguros, eficientes y escalables para potenciar tus aplicaciones. Desde APIs RESTful hasta complejos pipelines de procesamiento de datos, aseguro que tu lógica del lado del servidor sea confiable y de alto rendimiento.',
-    imageUrl: 'https://placehold.co/1200x600.png',
+    icon: ServerCog,
     details: [
       'Desarrollo con Node.js, Express y NestJS',
       'Diseño y gestión de bases de datos (SQL y NoSQL)',
@@ -41,7 +43,7 @@ export const services: Service[] = [
     title: 'Integración de IA',
     shortDescription: 'Potenciando aplicaciones con inteligencia artificial.',
     description: 'Incorporo modelos de IA de vanguardia para crear funcionalidades inteligentes, desde chatbots y asistentes virtuales hasta análisis de datos complejos y generación de contenido.',
-    imageUrl: 'https://placehold.co/1200x600.png',
+    icon: BrainCircuit,
     details: [
       'Integración con APIs de OpenAI, Gemini, etc.',
       'Desarrollo de flujos con Genkit',
@@ -52,10 +54,10 @@ export const services: Service[] = [
   },
     {
     slug: 'gestion-bases-datos',
-    title: 'Gestión de Bases de Datos',
+    title: 'Bases de Datos',
     shortDescription: 'Diseñando y manteniendo bases de datos eficientes.',
     description: 'Una base sólida para cualquier aplicación. Me especializo en diseñar, desplegar y mantener bases de datos optimizadas para el rendimiento, la escalabilidad y la integridad de los datos.',
-    imageUrl: 'https://placehold.co/1200x600.png',
+    icon: DatabaseZap,
     details: [
       'Bases de datos SQL (PostgreSQL, MySQL)',
       'Bases de datos NoSQL (MongoDB, Firestore)',

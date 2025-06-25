@@ -7,8 +7,8 @@ import { cn } from '@/lib/utils';
 import { SmoothScroll } from '@/components/smooth-scroll';
 
 export const metadata: Metadata = {
-  title: 'Devfolio | Portafolio Profesional de Desarrollador',
-  description: 'Un portafolio personal que muestra servicios de desarrollo en frontend, backend, móvil y más.',
+  title: 'Devfolio | Desarrollo de Software a Medida',
+  description: 'Especialista en desarrollo web y móvil. Transformo tus ideas en soluciones digitales robustas y escalables. Contáctame para empezar tu proyecto.',
 };
 
 export default function RootLayout({
@@ -21,7 +21,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"></link>
       </head>
       <body className={cn("font-body antialiased bg-background text-foreground min-h-screen flex flex-col")}>
         <SmoothScroll />

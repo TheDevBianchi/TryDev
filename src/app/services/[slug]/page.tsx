@@ -1,5 +1,4 @@
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 import { services, getServiceBySlug } from '@/lib/services';
 import type { Metadata } from 'next';
 import { Badge } from '@/components/ui/badge';
@@ -37,36 +36,30 @@ export default function ServicePage({ params }: Props) {
   }
 
   return (
-    <main className="flex-1 bg-background">
-      <div className="relative h-96 w-full">
-        <Image
-          src={service.imageUrl}
-          alt={service.title}
-          fill
-          className="object-cover"
-          priority
-          data-ai-hint={`${service.slug.split('-')[0]} ${service.slug.split('-')[1] || ''}`}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-        <div className="container relative z-10 flex h-full flex-col items-center justify-end pb-16 text-center">
-          <Badge variant="secondary" className="mb-4 bg-primary/20 text-primary-foreground border-primary/50">{service.title}</Badge>
+    <main className="flex-1 bg-background py-24 md:py-32">
+       <div className="container">
+        <div className="relative z-10 flex flex-col items-center justify-end pb-16 text-center">
+            <Badge variant="secondary" className="mb-4 text-sm font-medium bg-gradient-to-r from-blue-500/10 to-fuchsia-500/10 text-blue-300 border border-blue-500/20">
+              Servicio
+            </Badge>
           <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl lg:text-6xl text-foreground">
             {service.title}
           </h1>
-        </div>
-      </div>
-      
-      <div className="container py-16 md:py-24">
-        <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="space-y-4">
-             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Descripción del Servicio
-            </h2>
-            <p className="text-lg text-muted-foreground">
+           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
               {service.description}
             </p>
+        </div>
+      
+      <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-5 lg:gap-16">
+          <div className="space-y-6 lg:col-span-3">
+             <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Alcance del Servicio
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Mi servicio de {service.title} está diseñado para ser completo, cubriendo todos los aspectos clave para asegurar un producto final de alta calidad, robusto y escalable.
+            </p>
           </div>
-          <Card className="p-6">
+          <Card className="p-8 lg:col-span-2 bg-white/5 border border-white/10 rounded-xl">
             <h3 className="mb-6 text-2xl font-bold text-foreground">
               Qué Incluye
             </h3>
@@ -80,8 +73,8 @@ export default function ServicePage({ params }: Props) {
             </ul>
           </Card>
         </div>
-         <div className="mt-16 text-center">
-            <Button asChild size="lg" className="shadow-lg shadow-primary/20">
+         <div className="mt-20 text-center">
+            <Button asChild size="lg" className="bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/20">
               <Link href="/contact">Discutir Tu Proyecto</Link>
             </Button>
           </div>
