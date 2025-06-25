@@ -5,15 +5,16 @@ import { Card } from "@/components/ui/card";
 import { services } from "@/lib/services";
 import { ArrowRight } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
+import { ParticlesBackground } from "@/components/particles-background";
 
 export default function Home() {
   return (
     <main className="flex-1">
       <section className="relative w-full py-40 md:py-56 lg:py-64 overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-10">
+        <ParticlesBackground />
+        <div className="absolute inset-0 -z-20 opacity-20">
           <div className="absolute -top-1/2 -left-1/4 w-full h-full bg-[radial-gradient(circle_farthest-side,hsl(var(--primary)/0.2),transparent)] animate-[pulse_8s_cubic-bezier(0.4,0,0.6,1)_infinite]"></div>
           <div className="absolute -bottom-1/2 -right-1/4 w-full h-full bg-[radial-gradient(circle_farthest-side,hsl(var(--accent)/0.2),transparent)] animate-[pulse_10s_cubic-bezier(0.4,0,0.6,1)_infinite]"></div>
-          <div className="absolute inset-0 bg-[url('/particles.png')] bg-repeat bg-[length:256px_256px] opacity-20"></div>
         </div>
         
         <div className="container relative z-20 px-4 md:px-6 text-center">
