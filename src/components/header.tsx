@@ -49,7 +49,7 @@ export function Header() {
       <div className="container flex h-16 max-w-screen-2xl items-center">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-             <span className="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">Devfolio</span>
+             <span className="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">TryDev</span>
           </Link>
           <NavLinks className="hidden md:flex" />
         </div>
@@ -66,7 +66,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="left" className="bg-background/95">
               <Link href="/" className="mr-6 flex items-center space-x-2 mb-4">
-                 <span className="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">Devfolio</span>
+                 <span className="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">TryDev</span>
               </Link>
               <div className="my-4 h-[1px] w-full shrink-0 bg-border" />
               <NavLinks className="flex flex-col items-start gap-6" />

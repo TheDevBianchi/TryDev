@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: 'Servicio no encontrado' };
   }
   return {
-    title: `${service.title} | Devfolio`,
+    title: `${service.title} | TryDev`,
     description: service.description,
   };
 }

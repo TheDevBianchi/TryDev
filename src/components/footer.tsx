@@ -8,7 +8,7 @@ export function Footer() {
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
           <div className="flex flex-col gap-4">
             <Link href="/" className="flex items-center gap-2">
-                <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">Devfolio</span>
+                <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">TryDev</span>
             </Link>
             <p className="text-sm text-muted-foreground">
               Transformando ideas en soluciones digitales robustas y escalables.
@@ -55,7 +55,7 @@ export function Footer() {
         </div>
         <div className="mt-12 border-t border-white/10 pt-8 text-center">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Devfolio. Todos los derechos reservados.
+            © {new Date().getFullYear()} TryDev. Todos los derechos reservados.
           </p>
         </div>
       </div>

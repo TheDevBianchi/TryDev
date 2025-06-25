@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 import { SmoothScroll } from '@/components/smooth-scroll';
 
 export const metadata: Metadata = {
-  title: 'Devfolio | Desarrollo de Software a Medida',
+  title: 'TryDev | Desarrollo de Software a Medida',
   description: 'Especialista en desarrollo web y móvil. Transformo tus ideas en soluciones digitales robustas y escalables. Contáctame para empezar tu proyecto.',
 };
 
