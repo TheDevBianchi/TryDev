@@ -1,9 +1,10 @@
 
+
 import { notFound } from 'next/navigation';
 import { services, getServiceBySlug } from '@/lib/services';
 import type { Metadata } from 'next';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle2, XCircle, User, ShoppingCart, CreditCard, History, FileText, BarChart, Ticket, Settings, ShieldCheck, Users, Megaphone, Lock, MonitorSmartphone, LayoutTemplate, Warehouse, Truck, MapPin, QrCode, PlugZap } from 'lucide-react';
+import { CheckCircle2, XCircle, User, ShoppingCart, CreditCard, History, FileText, BarChart, Ticket, Settings, ShieldCheck, Users, Megaphone, Lock, MonitorSmartphone, LayoutTemplate, Warehouse, Truck, MapPin, QrCode, PlugZap, BrainCircuit, DatabaseZap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card } from '@/components/ui/card';
@@ -117,6 +118,48 @@ const inventoryAdvancedFeatures = [
     { title: "Roles y Permisos", description: "Asigna roles de usuario (cajero, gerente, etc.) con permisos de acceso personalizados.", icon: Users },
     { title: "Integraciones Externas", description: "Conecta con plataformas de e-commerce, software contable y otras herramientas.", icon: PlugZap },
     { title: "Configuración Avanzada", description: "Personaliza impuestos, monedas, y automatiza respaldos de seguridad de tus datos.", icon: Settings },
+];
+
+const aiCoreCapabilities = [
+  {
+    title: "Automatización Inteligente",
+    icon: PlugZap,
+    features: [
+      "Chatbots y asistentes virtuales para atención al cliente 24/7.",
+      "Clasificación automática de documentos y correos electrónicos.",
+      "Optimización de rutas y logística en tiempo real.",
+      "Sistemas de recomendación de productos o contenido."
+    ]
+  },
+  {
+    title: "Generación de Contenido",
+    icon: Megaphone,
+    features: [
+      "Creación de borradores para blogs, emails y redes sociales.",
+      "Generación de imágenes y diseños únicos a partir de texto.",
+      "Summarización de textos largos y documentos.",
+      "Traducción de idiomas de alta calidad."
+    ]
+  },
+  {
+    title: "Análisis de Datos Avanzado",
+    icon: BarChart,
+    features: [
+      "Análisis de sentimiento en opiniones de clientes.",
+      "Identificación de tendencias y patrones en grandes volúmenes de datos.",
+      "Proyecciones de ventas y demanda basadas en modelos predictivos.",
+      "Extracción de información clave de datos no estructurados."
+    ]
+  }
+];
+
+const aiTechnologies = [
+    { title: "Modelos de Lenguaje (LLMs)", description: "Integro modelos como Gemini y GPT para potenciar tus aplicaciones con capacidades de lenguaje natural.", icon: BrainCircuit },
+    { title: "Visión por Computadora", description: "Implemento análisis y reconocimiento de imágenes para tareas como moderación de contenido o etiquetado.", icon: MonitorSmartphone },
+    { title: "Desarrollo con Genkit", description: "Utilizo Genkit y Firebase para construir flujos de IA robustos, escalables y fáciles de mantener.", icon: Settings },
+    { title: "Bases de Datos Vectoriales", description: "Diseño e implemento soluciones de búsqueda semántica y RAG (Retrieval-Augmented Generation).", icon: DatabaseZap },
+    { title: "APIs y Herramientas", description: "Conecto tus sistemas con las principales APIs de IA del mercado, garantizando una integración fluida.", icon: PlugZap },
+    { title: "Seguridad y Ética", description: "Aplico las mejores prácticas para un uso responsable y seguro de la inteligencia artificial.", icon: ShieldCheck },
 ];
 
 
@@ -419,6 +462,86 @@ export default function ServicePage({ params }: Props) {
 
           </div>
         )}
+        
+        {service.slug === 'integracion-ia' && (
+          <div className="mt-24 md:mt-32 space-y-24">
+            
+            <div data-animate className="grid gap-12 items-start lg:grid-cols-2 lg:gap-24">
+              <div className="space-y-10">
+                <div className="space-y-4">
+                  <h2 className="text-3xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent sm:text-4xl">
+                    Capacidades Clave de IA
+                  </h2>
+                  <p className="text-lg text-muted-foreground">
+                    Transformo tus procesos y productos con funcionalidades inteligentes que marcan la diferencia, desde la automatización hasta la generación de contenido.
+                  </p>
+                </div>
+                
+                <Accordion type="single" collapsible defaultValue="item-0" className="w-full space-y-4">
+                  {aiCoreCapabilities.map((group, index) => (
+                    <AccordionItem 
+                      key={index} 
+                      value={`item-${index}`} 
+                      className="bg-white/5 border border-white/10 rounded-xl data-[state=open]:border-accent/30 data-[state=open]:bg-accent/5 transition-all"
+                    >
+                      <AccordionTrigger className="hover:no-underline text-lg font-semibold p-6 text-left">
+                        <div className="flex items-center gap-3 w-full">
+                          <group.icon className="h-6 w-6 text-accent flex-shrink-0" />
+                          <span className="flex-1">{group.title}</span>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent className="px-6">
+                        <ul className="space-y-3 pt-0 pb-4 pl-9">
+                          {group.features.map((feature, featureIndex) => (
+                            <li key={featureIndex} className="flex items-start gap-3">
+                              <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
+                              <span className="text-base text-muted-foreground">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </div>
+              <div className="relative group mt-8 lg:mt-0">
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur-lg opacity-25 group-hover:opacity-50 transition duration-1000 animate-pulse"></div>
+                <Card className="relative overflow-hidden rounded-xl bg-background/80 backdrop-blur-sm border-white/10 shadow-xl">
+                  <Image src="https://placehold.co/1200x800.png" alt="Visualización de una red neuronal" width={1200} height={800} data-ai-hint="neural network" className="rounded-lg object-cover" />
+                </Card>
+              </div>
+            </div>
+
+            <div data-animate className="grid gap-12 items-center lg:grid-cols-2 lg:gap-24">
+               <div className="relative group order-last lg:order-first">
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur-lg opacity-25 group-hover:opacity-50 transition duration-1000 animate-pulse"></div>
+                <Card className="relative overflow-hidden rounded-xl bg-background/80 backdrop-blur-sm border-white/10 shadow-xl">
+                  <Image src="https://placehold.co/1200x800.png" alt="Código y herramientas de desarrollo de IA" width={1200} height={800} data-ai-hint="code editor abstract" className="rounded-lg object-cover" />
+                </Card>
+              </div>
+              <div className="space-y-6">
+                <h2 className="text-3xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent sm:text-4xl">
+                  Tecnologías y Herramientas
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  Utilizo un stack tecnológico de vanguardia para construir soluciones de IA robustas, escalables y seguras.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {aiTechnologies.map((feature, index) => (
+                     <div key={index} className="flex items-start gap-4 p-4 rounded-lg bg-white/5 border border-white/10 hover:border-accent/30 hover:bg-accent/10 transition-all duration-300 transform hover:-translate-y-1">
+                      <feature.icon className="h-8 w-8 text-accent flex-shrink-0 mt-1" />
+                      <div>
+                        <h4 className="font-semibold text-foreground">{feature.title}</h4>
+                        <p className="text-sm text-muted-foreground">{feature.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        )}
 
          <div data-animate className="mt-20 text-center">
             <Button asChild size="lg" className="bg-gradient-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-opacity shadow-lg shadow-primary/20">
@@ -429,3 +552,4 @@ export default function ServicePage({ params }: Props) {
     </main>
   );
 }
+
