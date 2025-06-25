@@ -48,7 +48,7 @@ export function ContactForm() {
   }, [state, toast]);
 
   return (
-    <div className="max-w-2xl mx-auto text-center" data-animate>
+    <div className="max-w-2xl mx-auto text-center bg-secondary/20 border border-white/10 rounded-2xl p-8 md:p-12 backdrop-blur-sm" data-animate>
       <div className="mb-12">
         <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
           ¿Listo para empezar?
