@@ -16,11 +16,10 @@ export const services: Service[] = [
     slug: 'plataforma-de-rifas',
     title: 'Plataforma de Rifas Online',
     shortDescription: 'Lanza sorteos y rifas de forma segura y transparente con una plataforma personalizada, automatizada y fácil de gestionar.',
-    description: 'Desarrollo plataformas de rifas online completas y a medida. Desde la venta de boletos y la integración con pasarelas de pago, hasta la selección aleatoria de ganadores y la notificación automática. Ofrece a tus usuarios una experiencia segura, transparente y emocionante.',
+    description: 'Desarrollo plataformas de rifas online completas y a medida. Desde la venta de boletos, hasta la selección aleatoria de ganadores y la notificación automática. Ofrece a tus usuarios una experiencia segura, transparente y emocionante.',
     icon: Ticket,
     details: [
       'Venta y gestión de boletos personalizables',
-      'Integración con pasarelas de pago seguras (Stripe, Mercado Pago)',
       'Sistema de selección de ganadores aleatorio y verificable',
       'Panel de administración para gestionar rifas y usuarios',
       'Diseño 100% responsivo y adaptado a tu marca'

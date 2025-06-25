@@ -86,14 +86,14 @@ export default function ServicePage({ params }: Props) {
   return (
     <main className="flex-1 bg-background py-24 md:py-32">
        <div className="container">
-        <div data-animate className="relative z-10 flex flex-col items-center justify-end pb-16 text-center">
-            <Badge variant="secondary" className="mb-4 text-sm font-medium bg-gradient-to-r from-blue-500/10 to-fuchsia-500/10 text-blue-300 border border-blue-500/20">
+        <div data-animate className="relative z-10 flex flex-col items-center justify-center pb-16 text-center">
+          <Badge className="mb-4 bg-gradient-to-r from-primary to-accent text-primary-foreground border-transparent">
               Servicio
             </Badge>
-          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl lg:text-6xl text-foreground">
+          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-br from-white to-white/70">
             {service.title}
           </h1>
-           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+           <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground">
               {service.description}
             </p>
         </div>
@@ -262,7 +262,7 @@ export default function ServicePage({ params }: Props) {
         )}
 
          <div data-animate className="mt-20 text-center">
-            <Button asChild size="lg" className="bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/20">
+            <Button asChild size="lg" className="bg-gradient-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-opacity shadow-lg shadow-primary/20">
               <Link href="/contact">Discutir Tu Proyecto</Link>
             </Button>
           </div>
