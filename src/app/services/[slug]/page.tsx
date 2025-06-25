@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card } from '@/components/ui/card';
 import Image from 'next/image';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 type Props = {
   params: { slug: string };
@@ -30,29 +31,41 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const userFeatures = {
-  interfaz: [
-    { text: "Diseño Responsivo: Adaptable a dispositivos móviles, tablets y escritorio.", icon: User },
-    { text: "Tema Personalizado: Esquema de colores que refleja la identidad de la marca.", icon: User },
-    { text: "Navegación Intuitiva: Menú principal con acceso rápido a todas las secciones.", icon: User },
-  ],
-  funcionalidades: [
-    { text: "Exploración de Rifas: Visualización de rifas activas con detalles completos.", icon: Ticket },
-    { text: "Selección de Números: Interfaz interactiva para elegir tickets disponibles.", icon: Ticket },
-    { text: "Proceso de Compra: Flujo simplificado para adquirir tickets con múltiples opciones de pago.", icon: ShoppingCart },
-    { text: "Verificación de Tickets: Consulta de tickets comprados mediante número de teléfono.", icon: ShieldCheck },
-    { text: "Perfil de Usuario: Gestión de información y visualización de tickets adquiridos.", icon: User },
-    { text: "Notificaciones: Alertas sobre el estado de las rifas y resultados.", icon: Megaphone },
-  ],
-  secciones: [
-      { text: "Home: Presentación de rifas destacadas y banner promocional.", icon: FileText },
-      { text: "Detalle de Rifa: Información completa sobre premios, reglas y números.", icon: FileText },
-      { text: "Carrito de Compra: Gestión de tickets seleccionados.", icon: ShoppingCart },
-      { text: "Métodos de Pago: Integración con diversas opciones de pago.", icon: CreditCard },
-      { text: "Historial de Compras: Registro de todas las transacciones.", icon: History },
-      { text: "Términos y Condiciones: Información legal sobre el uso de la plataforma.", icon: FileText },
-  ]
-};
+const userFeatureGroups = [
+  {
+    title: "Interfaz de Usuario",
+    icon: MonitorSmartphone,
+    features: [
+      "Diseño Responsivo: Adaptable a dispositivos móviles, tablets y escritorio.",
+      "Tema Personalizado: Esquema de colores que refleja la identidad de la marca.",
+      "Navegación Intuitiva: Menú principal con acceso rápido a todas las secciones.",
+    ]
+  },
+  {
+    title: "Funcionalidades para Usuarios",
+    icon: Ticket,
+    features: [
+      "Exploración de Rifas: Visualización de rifas activas con detalles completos.",
+      "Selección de Números: Interfaz interactiva para elegir tickets disponibles.",
+      "Proceso de Compra: Flujo simplificado para adquirir tickets con múltiples opciones de pago.",
+      "Verificación de Tickets: Consulta de tickets comprados mediante número de teléfono.",
+      "Perfil de Usuario: Gestión de información y visualización de tickets adquiridos.",
+      "Notificaciones: Alertas sobre el estado de las rifas y resultados.",
+    ]
+  },
+  {
+    title: "Secciones Principales",
+    icon: LayoutTemplate,
+    features: [
+      "Home: Presentación de rifas destacadas y banner promocional.",
+      "Detalle de Rifa: Información completa sobre premios, reglas y números.",
+      "Carrito de Compra: Gestión de tickets seleccionados.",
+      "Métodos de Pago: Integración con diversas opciones de pago.",
+      "Historial de Compras: Registro de todas las transacciones.",
+      "Términos y Condiciones: Información legal sobre el uso de la plataforma.",
+    ]
+  }
+];
 
 const adminFeatures = [
     { title: "Dashboard Principal", description: "Visualización de ventas, usuarios activos y métricas clave en tiempo real.", icon: BarChart },
@@ -123,43 +136,32 @@ export default function ServicePage({ params }: Props) {
                   </p>
                 </div>
                 
-                <div className="space-y-8">
-                  <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-                    <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-3"><MonitorSmartphone className="text-accent" /> Interfaz de Usuario</h3>
-                    <ul className="space-y-3">
-                      {userFeatures.interfaz.map((feature, index) => (
-                        <li key={index} className="flex items-start gap-3">
-                          <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
-                          <span className="text-base text-muted-foreground">{feature.text}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-                    <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-3"><Ticket className="text-accent" /> Funcionalidades para Usuarios</h3>
-                    <ul className="space-y-3">
-                      {userFeatures.funcionalidades.map((feature, index) => (
-                        <li key={index} className="flex items-start gap-3">
-                          <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
-                          <span className="text-base text-muted-foreground">{feature.text}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="p-6 rounded-xl bg-white/5 border border-white/10">
-                    <h3 className="text-xl font-semibold mb-4 text-foreground flex items-center gap-3"><LayoutTemplate className="text-accent" /> Secciones Principales</h3>
-                    <ul className="space-y-3">
-                      {userFeatures.secciones.map((feature, index) => (
-                        <li key={index} className="flex items-start gap-3">
-                          <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
-                          <span className="text-base text-muted-foreground">{feature.text}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+                <Accordion type="single" collapsible defaultValue="item-0" className="w-full space-y-4">
+                  {userFeatureGroups.map((group, index) => (
+                    <AccordionItem 
+                      key={index} 
+                      value={`item-${index}`} 
+                      className="bg-white/5 border border-white/10 rounded-xl data-[state=open]:border-accent/30 data-[state=open]:bg-accent/5 transition-all"
+                    >
+                      <AccordionTrigger className="hover:no-underline text-lg font-semibold p-6 text-left">
+                        <div className="flex items-center gap-3 w-full">
+                          <group.icon className="h-6 w-6 text-accent flex-shrink-0" />
+                          <span className="flex-1">{group.title}</span>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent className="px-6">
+                        <ul className="space-y-3 pt-0 pb-4 pl-9">
+                          {group.features.map((feature, featureIndex) => (
+                            <li key={featureIndex} className="flex items-start gap-3">
+                              <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
+                              <span className="text-base text-muted-foreground">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
               </div>
               <div className="relative group mt-8 lg:mt-0">
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur-lg opacity-25 group-hover:opacity-50 transition duration-1000 animate-pulse"></div>
@@ -221,7 +223,7 @@ export default function ServicePage({ params }: Props) {
                   </Button>
                 </Card>
 
-                <Card className="p-8 flex flex-col bg-white/5 border-2 border-primary rounded-xl relative lg:scale-105 h-full z-10">
+                <Card className="p-8 flex flex-col bg-white/5 border-2 border-primary rounded-xl relative lg:scale-105 h-full z-10 overflow-visible">
                   <Badge variant="default" className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground">Más Popular</Badge>
                   <h3 className="text-2xl font-bold text-foreground">Compra Completa</h3>
                   <p className="mt-4 text-4xl font-bold text-primary">$899</p>
