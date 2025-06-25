@@ -217,11 +217,10 @@ export default function ServicePage({ params }: Props) {
                 </Card>
 
                 {/* One-Time Purchase (Featured) */}
-                <Card className="p-8 flex flex-col bg-white/5 border-2 border-primary rounded-xl relative overflow-hidden lg:scale-105 h-full">
-                  <Badge variant="default" className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground">Más Popular</Badge>
+                <Card className="p-8 flex flex-col bg-white/5 border-2 border-primary rounded-xl relative lg:scale-105 h-full">
+                  <Badge variant="default" className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground z-10">Más Popular</Badge>
                   <h3 className="text-2xl font-bold text-foreground">Compra Completa</h3>
                   <p className="mt-4 text-4xl font-bold text-primary">$899</p>
-                  <p className="text-base text-muted-foreground -mt-2 mb-4">(50% al iniciar y 50% al finalizar)</p>
                   <p className="mt-4 text-muted-foreground flex-grow">La solución definitiva. Compra la plataforma y adáptala sin límites a tu proyecto.</p>
                   <ul className="mt-8 space-y-4 text-left">
                     <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-1" /><span>Licencia de por vida y código fuente</span></li>
