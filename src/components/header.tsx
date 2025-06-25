@@ -23,21 +23,24 @@ export function Header() {
 
   const NavLinks = ({ className }: { className?: string }) => (
     <nav className={cn("flex items-center gap-6 lg:gap-8", className)}>
-      {navLinks.map(({ href, label }) => (
-        <Link
-          key={href}
-          href={href}
-          onClick={handleLinkClick}
-          className={cn(
-            "text-sm font-medium transition-colors hover:text-primary",
-            (pathname === href && href === "/") || (href !== "/" && pathname.startsWith(href) && href !== "#services")
-              ? "text-primary"
-              : "text-muted-foreground"
-          )}
-        >
-          {label}
-        </Link>
-      ))}
+      {navLinks.map(({ href, label }) => {
+        const isActive = (href === "/" && pathname === "/") || (href !== "/" && pathname.startsWith(href));
+        return (
+          <Link
+            key={href}
+            href={href}
+            onClick={handleLinkClick}
+            className={cn(
+              "text-sm font-medium transition-colors hover:text-primary",
+              isActive && href !== "/#services"
+                ? "text-primary"
+                : "text-muted-foreground"
+            )}
+          >
+            {label}
+          </Link>
+        )
+      })}
     </nav>
   )
 
@@ -46,12 +49,12 @@ export function Header() {
       <div className="container flex h-16 max-w-screen-2xl items-center">
         <div className="mr-4 flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-             <span className="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-fuchsia-500">Devfolio</span>
+             <span className="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">Devfolio</span>
           </Link>
           <NavLinks className="hidden md:flex" />
         </div>
         <div className="flex flex-1 items-center justify-end space-x-2">
-           <Button asChild className="hidden md:flex bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:opacity-90 transition-opacity">
+           <Button asChild className="hidden md:flex bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/20 hover:opacity-90 transition-all duration-300 hover:scale-105">
             <Link href="/contact">Hablemos</Link>
           </Button>
           <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
@@ -63,7 +66,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="left" className="bg-background/95">
               <Link href="/" className="mr-6 flex items-center space-x-2 mb-4">
-                 <span className="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-fuchsia-500">Devfolio</span>
+                 <span className="font-bold text-lg bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">Devfolio</span>
               </Link>
               <div className="my-4 h-[1px] w-full shrink-0 bg-border" />
               <NavLinks className="flex flex-col items-start gap-6" />
