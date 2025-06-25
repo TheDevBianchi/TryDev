@@ -72,7 +72,7 @@ export default function ServicePage({ params }: Props) {
   return (
     <main className="flex-1 bg-background py-24 md:py-32">
        <div className="container">
-        <div className="relative z-10 flex flex-col items-center justify-end pb-16 text-center">
+        <div data-animate className="relative z-10 flex flex-col items-center justify-end pb-16 text-center">
             <Badge variant="secondary" className="mb-4 text-sm font-medium bg-gradient-to-r from-blue-500/10 to-fuchsia-500/10 text-blue-300 border border-blue-500/20">
               Servicio
             </Badge>
@@ -84,7 +84,7 @@ export default function ServicePage({ params }: Props) {
             </p>
         </div>
       
-      <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-5 lg:gap-16">
+      <div data-animate className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-5 lg:gap-16">
           <div className="space-y-6 lg:col-span-3">
              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
               Alcance del Servicio
@@ -111,7 +111,7 @@ export default function ServicePage({ params }: Props) {
         {service.slug === 'plataforma-de-rifas' && (
           <div className="mt-24 md:mt-32 space-y-24">
             {/* User Features Section */}
-            <div className="grid gap-12 items-center lg:grid-cols-2 lg:gap-24">
+            <div data-animate className="grid gap-12 items-center lg:grid-cols-2 lg:gap-24">
               <div className="space-y-8">
                 <h2 className="text-3xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent sm:text-4xl">
                   Características Principales
@@ -161,7 +161,7 @@ export default function ServicePage({ params }: Props) {
             </div>
 
             {/* Admin Panel Section */}
-            <div className="grid gap-12 items-center lg:grid-cols-2 lg:gap-24">
+            <div data-animate className="grid gap-12 items-center lg:grid-cols-2 lg:gap-24">
                <div className="relative group lg:order-last">
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur-lg opacity-25 group-hover:opacity-50 transition duration-1000 animate-pulse"></div>
                 <Card className="relative overflow-hidden rounded-xl bg-background/80 backdrop-blur-sm border-white/10 shadow-xl">
@@ -191,7 +191,7 @@ export default function ServicePage({ params }: Props) {
           </div>
         )}
 
-         <div className="mt-20 text-center">
+         <div data-animate className="mt-20 text-center">
             <Button asChild size="lg" className="bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:opacity-90 transition-opacity shadow-lg shadow-blue-500/20">
               <Link href="/contact">Discutir Tu Proyecto</Link>
             </Button>
