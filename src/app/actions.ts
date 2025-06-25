@@ -3,9 +3,9 @@
 import { z } from "zod";
 
 const contactFormSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Please enter a valid email." }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
+  name: z.string().min(2, { message: "El nombre debe tener al menos 2 caracteres." }),
+  email: z.string().email({ message: "Por favor, introduce un correo electrónico válido." }),
+  message: z.string().min(10, { message: "El mensaje debe tener al menos 10 caracteres." }),
 });
 
 export type ContactFormState = {
@@ -25,7 +25,7 @@ export async function submitContactForm(
 
   if (!validatedFields.success) {
      const errorMessages = validatedFields.error.flatten().fieldErrors;
-     const firstError = Object.values(errorMessages).flat()[0] || "Invalid data provided.";
+     const firstError = Object.values(errorMessages).flat()[0] || "Datos proporcionados no válidos.";
     return {
       message: firstError,
       status: "error",
@@ -40,7 +40,7 @@ export async function submitContactForm(
   await new Promise(resolve => setTimeout(resolve, 1000));
   
   return {
-    message: "Thank you for your message! I'll get back to you soon.",
+    message: "¡Gracias por tu mensaje! Te responderé pronto.",
     status: "success",
   };
 }

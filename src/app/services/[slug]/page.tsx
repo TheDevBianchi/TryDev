@@ -21,7 +21,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const service = getServiceBySlug(params.slug);
   if (!service) {
-    return { title: 'Service not found' };
+    return { title: 'Servicio no encontrado' };
   }
   return {
     title: `${service.title} | Devfolio`,
@@ -60,7 +60,7 @@ export default function ServicePage({ params }: Props) {
         <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="space-y-4">
              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Service Overview
+              Descripción del Servicio
             </h2>
             <p className="text-lg text-muted-foreground">
               {service.description}
@@ -68,7 +68,7 @@ export default function ServicePage({ params }: Props) {
           </div>
           <Card className="p-6">
             <h3 className="mb-6 text-2xl font-bold text-foreground">
-              What's Included
+              Qué Incluye
             </h3>
             <ul className="space-y-4">
               {service.details.map((detail, index) => (
@@ -82,7 +82,7 @@ export default function ServicePage({ params }: Props) {
         </div>
          <div className="mt-16 text-center">
             <Button asChild size="lg" className="shadow-lg shadow-primary/20">
-              <Link href="/contact">Discuss Your Project</Link>
+              <Link href="/contact">Discutir Tu Proyecto</Link>
             </Button>
           </div>
       </div>

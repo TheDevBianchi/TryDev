@@ -31,16 +31,16 @@ export function Footer() {
             <span className="text-lg font-bold">Devfolio</span>
           </Link>
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Devfolio. All rights reserved.
+            © {new Date().getFullYear()} Devfolio. Todos los derechos reservados.
           </p>
         </div>
         <div className="flex flex-col items-center gap-4 md:items-end">
           <div className="flex items-center gap-4">
             <Link href="/privacy-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Privacy Policy
+              Política de Privacidad
             </Link>
             <Link href="/terms-of-service" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Terms of Service
+              Términos de Servicio
             </Link>
           </div>
           <div className="flex items-center gap-4">
