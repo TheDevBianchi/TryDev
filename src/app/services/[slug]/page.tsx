@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { Card } from '@/components/ui/card';
 import Image from 'next/image';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 
 type Props = {
   params: { slug: string };
@@ -161,6 +162,34 @@ const aiTechnologies = [
     { title: "APIs y Herramientas", description: "Conecto tus sistemas con las principales APIs de IA del mercado, garantizando una integración fluida.", icon: PlugZap },
     { title: "Seguridad y Ética", description: "Aplico las mejores prácticas para un uso responsable y seguro de la inteligencia artificial.", icon: ShieldCheck },
 ];
+
+const aiServicesPricing = [
+    {
+      service: "Chatbot (WhatsApp/Telegram)",
+      description: "Automatiza la atención al cliente y las ventas con un chatbot inteligente y siempre disponible en las plataformas de mensajería más populares.",
+      price: "Desde $499",
+    },
+    {
+      service: "Asistente Personalizado",
+      description: "Un asistente de IA a medida para tu equipo o empresa, capaz de gestionar tareas, responder preguntas complejas y optimizar flujos de trabajo internos.",
+      price: "Desde $999",
+    },
+    {
+      service: "Gestión Automatizada de Citas",
+      description: "Implementa un sistema que agenda, confirma y gestiona citas con clientes de forma autónoma, integrándose con tu calendario.",
+      price: "Desde $349",
+    },
+    {
+      service: "Automatización de Contenido",
+      description: "Genera borradores para blogs, publicaciones en redes sociales o campañas de email marketing, manteniendo una voz de marca consistente.",
+      price: "Desde $299/mes",
+    },
+    {
+      service: "Análisis de Datos con IA",
+      description: "Extrae insights valiosos de tus datos para identificar tendencias, predecir comportamientos y tomar decisiones estratégicas informadas.",
+      price: "Contactar",
+    }
+  ];
 
 
 export default function ServicePage({ params }: Props) {
@@ -539,6 +568,35 @@ export default function ServicePage({ params }: Props) {
                 </div>
               </div>
             </div>
+
+            <div data-animate className="text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent sm:text-4xl">
+                Servicios y Precios de IA
+              </h2>
+              <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+                Soluciones de IA a medida para potenciar tu negocio. Los precios son de partida y pueden variar según la complejidad del proyecto.
+              </p>
+              <Card className="mt-12 max-w-4xl mx-auto bg-white/5 border border-white/10 text-left">
+                <Table>
+                  <TableHeader>
+                    <TableRow>
+                      <TableHead className="w-[300px] text-foreground font-semibold">Servicio</TableHead>
+                      <TableHead className="text-foreground font-semibold">Descripción</TableHead>
+                      <TableHead className="text-right text-foreground font-semibold">Precio</TableHead>
+                    </TableRow>
+                  </TableHeader>
+                  <TableBody>
+                    {aiServicesPricing.map((item) => (
+                      <TableRow key={item.service} className="border-white/10">
+                        <TableCell className="font-medium">{item.service}</TableCell>
+                        <TableCell className="text-muted-foreground">{item.description}</TableCell>
+                        <TableCell className="text-right font-bold text-primary">{item.price}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </Card>
+            </div>
             
           </div>
         )}
@@ -552,4 +610,3 @@ export default function ServicePage({ params }: Props) {
     </main>
   );
 }
-
