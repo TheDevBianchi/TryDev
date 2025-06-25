@@ -129,7 +129,8 @@ const aiCoreCapabilities = [
       "Chatbots y asistentes virtuales para atención al cliente 24/7.",
       "Clasificación automática de documentos y correos electrónicos.",
       "Optimización de rutas y logística en tiempo real.",
-      "Sistemas de recomendación de productos o contenido."
+      "Sistemas de recomendación de productos o contenido.",
+      "Integración con aplicaciones (Sheets, Excel, Docs) para automatizar tareas."
     ]
   },
   {
@@ -183,6 +184,11 @@ const aiServicesPricing = [
       service: "Automatización de Contenido",
       description: "Genera borradores para blogs, publicaciones en redes sociales o campañas de email marketing, manteniendo una voz de marca consistente.",
       price: "Desde $299/mes",
+    },
+    {
+      service: "Integración con Documentos y Apps",
+      description: "Potencia tus flujos de trabajo en Google Sheets, Excel, documentos y otras aplicaciones con capacidades de IA para análisis y automatización.",
+      price: "Desde $449",
     },
     {
       service: "Análisis de Datos con IA",
