@@ -1,32 +1,32 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { services } from "@/lib/services";
+import { ArrowRight } from "lucide-react";
+import { ContactForm } from "@/components/contact-form";
 
 export default function Home() {
   return (
     <main className="flex-1">
-      <section className="relative w-full overflow-hidden py-32 md:py-48 lg:py-56 bg-background">
-        <div className="absolute inset-0 z-0 opacity-50 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.05)_0%,_rgba(255,255,255,0)_60%)] bg-[size:10px_10px]"></div>
-         <div className="absolute inset-0 z-10 bg-gradient-to-b from-transparent to-background"></div>
-         <div className="absolute inset-0 z-0">
-          <div className="absolute bottom-0 left-[-20%] right-0 top-auto h-[500px] w-[1000px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(29,78,216,0.15),rgba(29,78,216,0))]"></div>
-          <div className="absolute bottom-0 right-[-20%] top-auto h-[500px] w-[1000px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(192,38,211,0.15),rgba(192,38,211,0))]"></div>
+      <section className="relative w-full py-40 md:py-56 lg:py-64 overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-10">
+          <div className="absolute -top-1/2 -left-1/4 w-full h-full bg-[radial-gradient(circle_farthest-side,hsl(var(--primary)/0.2),transparent)] animate-[pulse_8s_cubic-bezier(0.4,0,0.6,1)_infinite]"></div>
+          <div className="absolute -bottom-1/2 -right-1/4 w-full h-full bg-[radial-gradient(circle_farthest-side,hsl(var(--accent)/0.2),transparent)] animate-[pulse_10s_cubic-bezier(0.4,0,0.6,1)_infinite]"></div>
+          <div className="absolute inset-0 bg-[url('/particles.png')] bg-repeat bg-[length:256px_256px] opacity-20"></div>
         </div>
+        
         <div className="container relative z-20 px-4 md:px-6 text-center">
           <div className="max-w-4xl mx-auto space-y-8">
-            <h1 data-animate className="text-4xl font-black tracking-tighter sm:text-6xl md:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-fuchsia-500">
+            <h1 data-animate className="text-4xl font-black tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl bg-clip-text text-transparent bg-gradient-to-br from-white via-white/80 to-primary/30 pb-4">
               Transformando Ideas en Realidad Digital
             </h1>
             <p data-animate className="text-lg text-muted-foreground md:text-xl max-w-2xl mx-auto">
              Desarrollo soluciones de software innovadoras, escalables y a medida que impulsan el crecimiento de tu negocio.
             </p>
             <div data-animate className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button asChild size="lg" className="bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:opacity-90 transition-opacity">
+              <Button asChild size="lg" className="bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/20 hover:opacity-90 transition-all duration-300 hover:scale-105">
                 <Link href="/contact">Contáctame</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-primary/50 text-primary-foreground hover:bg-primary/10 hover:text-primary-foreground">
-                <Link href="#services">Mis Especialidades</Link>
               </Button>
             </div>
           </div>
@@ -35,31 +35,51 @@ export default function Home() {
 
       <section id="services" className="w-full py-20 md:py-32 bg-background">
         <div className="container px-4 md:px-6">
-          <div data-animate className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Soluciones Digitales a Medida</h2>
+          <div data-animate className="text-center mb-16 md:mb-24">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+              Explora Mis Servicios
+            </h2>
             <p className="max-w-[800px] mx-auto text-muted-foreground md:text-xl/relaxed mt-4">
               Desde aplicaciones web interactivas hasta complejas integraciones de IA, ofrezco un espectro completo de servicios para materializar tu visión.
             </p>
           </div>
-          <div data-animate className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-            {services.map((service) => (
-              <Link key={service.slug} href={`/services/${service.slug}`} className="group block">
-                <Card className="relative overflow-hidden h-full flex flex-col p-8 bg-white/5 border border-white/10 rounded-xl shadow-2xl shadow-black/40 transition-all duration-300 hover:border-primary/50 hover:-translate-y-2">
-                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute -inset-px rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{
-                    backgroundImage: 'radial-gradient(400px at top left, hsl(var(--primary) / 0.5), transparent), radial-gradient(400px at top right, hsl(var(--accent) / 0.3), transparent)'
-                  }}></div>
-                  <div className="relative z-10 flex flex-col h-full">
-                    <div className="mb-6 text-primary">
-                      <service.icon className="h-10 w-10"/>
-                    </div>
-                    <h3 className="text-2xl font-bold text-foreground mb-2">{service.title}</h3>
-                    <p className="text-muted-foreground flex-grow">{service.shortDescription}</p>
+          <div className="space-y-20 md:space-y-32">
+            {services.map((service, index) => (
+              <div key={service.slug} data-animate className="grid gap-12 items-center lg:grid-cols-2 lg:gap-24">
+                <div className={`flex flex-col justify-center space-y-6 ${index % 2 !== 0 ? 'lg:order-last' : ''}`}>
+                  <div className="inline-block p-4 bg-accent/10 rounded-full self-start ring-2 ring-accent/20">
+                    <service.icon className="h-8 w-8 text-accent" />
                   </div>
-                </Card>
-              </Link>
+                  <h3 className="text-3xl font-bold tracking-tighter sm:text-4xl">{service.title}</h3>
+                  <p className="text-muted-foreground text-lg">{service.shortDescription}</p>
+                  <Button asChild variant="outline" size="lg" className="self-start group border-accent/50 text-accent hover:bg-accent/10 hover:text-accent hover:border-accent">
+                    <Link href={`/services/${service.slug}`}>
+                      Saber más <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </Button>
+                </div>
+                <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur-lg opacity-25 group-hover:opacity-50 transition duration-1000 animate-pulse"></div>
+                  <Card className="relative overflow-hidden rounded-xl bg-background/80 backdrop-blur-sm border-white/10 shadow-xl">
+                    <Image
+                      src={service.imageUrl}
+                      alt={service.imageAlt}
+                      width={1200}
+                      height={800}
+                      data-ai-hint={index % 2 === 0 ? "dashboard ui" : "server architecture"}
+                      className="rounded-lg object-cover"
+                    />
+                  </Card>
+                </div>
+              </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section id="contact" className="w-full py-20 md:py-32">
+        <div className="container px-4 md:px-6">
+          <ContactForm />
         </div>
       </section>
     </main>

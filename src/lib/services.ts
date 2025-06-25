@@ -7,13 +7,15 @@ export type Service = {
   description: string;
   icon: LucideIcon;
   details: string[];
+  imageUrl: string;
+  imageAlt: string;
 };
 
 export const services: Service[] = [
   {
     slug: 'desarrollo-frontend',
     title: 'Desarrollo Frontend',
-    shortDescription: 'Creando interfaces de usuario atractivas y responsivas.',
+    shortDescription: 'Creando interfaces de usuario atractivas, responsivas y de alto rendimiento que cautivan a tus usuarios y elevan tu marca.',
     description: 'Construyo interfaces de usuario modernas, interactivas y de alto rendimiento utilizando las últimas tecnologías web. Mi enfoque es crear experiencias de usuario fluidas que sean visualmente atractivas y altamente funcionales.',
     icon: CodeXml,
     details: [
@@ -23,11 +25,13 @@ export const services: Service[] = [
       'Optimización del rendimiento y tiempos de carga rápidos',
       'Código accesible (a11y) y amigable para SEO'
     ],
+    imageUrl: 'https://placehold.co/1200x800.png',
+    imageAlt: 'Captura de pantalla de una interfaz de desarrollo frontend',
   },
   {
     slug: 'desarrollo-backend',
     title: 'Desarrollo Backend',
-    shortDescription: 'Construyendo aplicaciones del lado del servidor robustas y escalables.',
+    shortDescription: 'Construyendo la lógica del servidor robusta, segura y escalable que impulsa tu aplicación, asegurando un rendimiento óptimo.',
     description: 'Desarrollo sistemas backend seguros, eficientes y escalables para potenciar tus aplicaciones. Desde APIs RESTful hasta complejos pipelines de procesamiento de datos, aseguro que tu lógica del lado del servidor sea confiable y de alto rendimiento.',
     icon: ServerCog,
     details: [
@@ -37,11 +41,13 @@ export const services: Service[] = [
       'Sistemas de autenticación y autorización',
       'Despliegue en la nube (Firebase, AWS, Vercel)'
     ],
+    imageUrl: 'https://placehold.co/1200x800.png',
+    imageAlt: 'Diagrama de una arquitectura de backend',
   },
     {
     slug: 'integracion-ia',
     title: 'Integración de IA',
-    shortDescription: 'Potenciando aplicaciones con inteligencia artificial.',
+    shortDescription: 'Potenciando tus aplicaciones con inteligencia artificial de vanguardia para crear experiencias únicas y automatizar procesos complejos.',
     description: 'Incorporo modelos de IA de vanguardia para crear funcionalidades inteligentes, desde chatbots y asistentes virtuales hasta análisis de datos complejos y generación de contenido.',
     icon: BrainCircuit,
     details: [
@@ -51,11 +57,13 @@ export const services: Service[] = [
       'Sistemas de recomendación personalizados',
       'Automatización de procesos con IA'
     ],
+    imageUrl: 'https://placehold.co/1200x800.png',
+    imageAlt: 'Visualización de una red neuronal de inteligencia artificial',
   },
     {
     slug: 'gestion-bases-datos',
     title: 'Bases de Datos',
-    shortDescription: 'Diseñando y manteniendo bases de datos eficientes.',
+    shortDescription: 'Diseñando y manteniendo bases de datos eficientes, seguras y escalables que son la base sólida de tu aplicación.',
     description: 'Una base sólida para cualquier aplicación. Me especializo en diseñar, desplegar y mantener bases de datos optimizadas para el rendimiento, la escalabilidad y la integridad de los datos.',
     icon: DatabaseZap,
     details: [
@@ -65,6 +73,8 @@ export const services: Service[] = [
       'Optimización de consultas e indexación',
       'Estrategias de migración y respaldo de datos'
     ],
+    imageUrl: 'https://placehold.co/1200x800.png',
+    imageAlt: 'Panel de control de una base de datos',
   },
 ];
 
