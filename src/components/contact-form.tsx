@@ -8,13 +8,17 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Loader2 } from "lucide-react";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button type="submit" className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:opacity-90 transition-opacity" disabled={pending}>
+    <Button
+      type="submit"
+      size="lg"
+      className="w-full bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/20 hover:opacity-90 transition-all duration-300 hover:scale-105"
+      disabled={pending}
+    >
       {pending ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
       Enviar Mensaje
     </Button>
@@ -44,30 +48,34 @@ export function ContactForm() {
   }, [state, toast]);
 
   return (
-    <Card className="max-w-xl mx-auto bg-white/5 border-white/10 rounded-xl shadow-2xl shadow-black/40">
-      <CardHeader className="text-center">
-        <CardTitle className="text-3xl font-bold">Contáctame</CardTitle>
-        <CardDescription className="text-md text-muted-foreground">
-          ¿Tienes un proyecto en mente o solo quieres saludar? Hablemos.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <form ref={formRef} action={formAction} className="space-y-6">
+    <div className="max-w-2xl mx-auto text-center" data-animate>
+      <div className="mb-12">
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">
+          ¿Listo para empezar?
+        </h2>
+        <p className="max-w-[800px] mx-auto text-muted-foreground md:text-xl/relaxed mt-4">
+          Hablemos sobre cómo puedo ayudarte a llevar tu proyecto al siguiente nivel.
+        </p>
+      </div>
+      <form ref={formRef} action={formAction} className="space-y-6 text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div className="space-y-2">
             <Label htmlFor="name">Nombre</Label>
-            <Input id="name" name="name" placeholder="Tu Nombre" required className="bg-transparent focus:bg-white/5"/>
+            <Input id="name" name="name" placeholder="Tu Nombre" required className="bg-transparent border-white/20 focus:border-primary"/>
           </div>
           <div className="space-y-2">
             <Label htmlFor="email">Correo Electrónico</Label>
-            <Input id="email" name="email" type="email" placeholder="tu@email.com" required className="bg-transparent focus:bg-white/5"/>
+            <Input id="email" name="email" type="email" placeholder="tu@email.com" required className="bg-transparent border-white/20 focus:border-primary"/>
           </div>
-          <div className="space-y-2">
-            <Label htmlFor="message">Mensaje</Label>
-            <Textarea id="message" name="message" placeholder="Tu mensaje..." required minLength={10} className="min-h-[150px] bg-transparent focus:bg-white/5" />
-          </div>
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="message">Mensaje</Label>
+          <Textarea id="message" name="message" placeholder="Describe tu idea o proyecto..." required minLength={10} className="min-h-[150px] bg-transparent border-white/20 focus:border-primary" />
+        </div>
+        <div className="text-center">
           <SubmitButton />
-        </form>
-      </CardContent>
-    </Card>
+        </div>
+      </form>
+    </div>
   );
 }
