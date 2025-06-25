@@ -1,4 +1,4 @@
-import { Ticket, BrainCircuit, DatabaseZap, LucideIcon, Warehouse } from 'lucide-react';
+import { Ticket, BrainCircuit, LucideIcon, Warehouse, LayoutTemplate } from 'lucide-react';
 
 export type Service = {
   slug: string;
@@ -59,20 +59,20 @@ export const services: Service[] = [
     imageAlt: 'Visualización de una red neuronal de inteligencia artificial',
   },
     {
-    slug: 'gestion-bases-datos',
-    title: 'Bases de Datos',
-    shortDescription: 'Diseñando y manteniendo bases de datos eficientes, seguras y escalables que son la base sólida de tu aplicación.',
-    description: 'Una base sólida para cualquier aplicación. Me especializo en diseñar, desplegar y mantener bases de datos optimizadas para el rendimiento, la escalabilidad y la integridad de los datos.',
-    icon: DatabaseZap,
+    slug: 'desarrollo-web-a-medida',
+    title: 'Desarrollo Web a Medida',
+    shortDescription: 'Soluciones digitales personalizadas, desde landing pages hasta e-commerce y aplicaciones web complejas.',
+    description: 'Transformo tus ideas en realidad digital con soluciones web a medida. Ya sea que necesites una landing page impactante, una tienda de e-commerce robusta o una aplicación web compleja, me especializo en crear plataformas escalables, seguras y de alto rendimiento que se adaptan perfectamente a las necesidades de tu negocio.',
+    icon: LayoutTemplate,
     details: [
-      'Bases de datos SQL (PostgreSQL, MySQL)',
-      'Bases de datos NoSQL (MongoDB, Firestore)',
-      'Diseño de esquemas y normalización',
-      'Optimización de consultas e indexación',
-      'Estrategias de migración y respaldo de datos'
+      'Landing Pages y Sitios Corporativos',
+      'Plataformas de E-commerce completas',
+      'Aplicaciones Web Interactivas (SaaS)',
+      'Integración con APIs y servicios de terceros',
+      'Optimización de rendimiento y SEO'
     ],
     imageUrl: 'https://placehold.co/1200x800.png',
-    imageAlt: 'Panel de control de una base de datos',
+    imageAlt: 'Ejemplos de aplicaciones web a medida',
   },
 ];
 

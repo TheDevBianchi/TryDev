@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { services, getServiceBySlug } from '@/lib/services';
 import type { Metadata } from 'next';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle2, XCircle, User, ShoppingCart, CreditCard, History, FileText, BarChart, Ticket, Settings, ShieldCheck, Users, Megaphone, Lock, MonitorSmartphone, LayoutTemplate, Warehouse, Truck, MapPin, QrCode, PlugZap, BrainCircuit, DatabaseZap } from 'lucide-react';
+import { CheckCircle2, XCircle, User, ShoppingCart, CreditCard, History, FileText, BarChart, Ticket, Settings, ShieldCheck, Users, Megaphone, Lock, MonitorSmartphone, LayoutTemplate, Warehouse, Truck, MapPin, QrCode, PlugZap, BrainCircuit, DatabaseZap, Globe, Briefcase, DraftingCompass, Rocket, Wrench, Palette, TestTube } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Card } from '@/components/ui/card';
@@ -190,6 +190,57 @@ const aiServicesPricing = [
       price: "Contactar",
     }
   ];
+
+const webDevProjectTypes = [
+  {
+    title: "Landing Pages y Sitios Web",
+    icon: Globe,
+    description: "Páginas de aterrizaje y sitios corporativos optimizados para convertir visitantes en clientes."
+  },
+  {
+    title: "Tiendas de E-commerce",
+    icon: ShoppingCart,
+    description: "Plataformas de comercio electrónico completas con carritos de compra, pasarelas de pago y gestión de productos."
+  },
+  {
+    title: "Aplicaciones Web (SaaS)",
+    icon: Briefcase,
+    description: "Soluciones de software como servicio (SaaS) complejas, escalables y seguras para resolver problemas específicos."
+  },
+  {
+    title: "Plataformas Personalizadas",
+    icon: LayoutTemplate,
+    description: "Sistemas a medida como marketplaces, plataformas educativas o redes sociales, diseñados para tu modelo de negocio."
+  }
+];
+
+const webDevProcess = [
+  {
+    title: "1. Descubrimiento",
+    description: "Analizamos tus objetivos para definir el alcance del proyecto y asegurar el éxito.",
+    icon: TestTube
+  },
+  {
+    title: "2. Diseño UI/UX",
+    description: "Creamos una interfaz intuitiva y atractiva centrada en la experiencia de usuario.",
+    icon: Palette
+  },
+  {
+    title: "3. Desarrollo",
+    description: "Construimos la aplicación con tecnologías modernas y mejores prácticas.",
+    icon: DraftingCompass
+  },
+  {
+    title: "4. Lanzamiento",
+    description: "Gestionamos la puesta en marcha de tu aplicación en servidores optimizados.",
+    icon: Rocket
+  },
+    {
+    title: "5. Soporte",
+    description: "Ofrezco soporte continuo para asegurar que tu aplicación funcione sin problemas.",
+    icon: Wrench
+  }
+];
 
 
 export default function ServicePage({ params }: Props) {
@@ -600,6 +651,60 @@ export default function ServicePage({ params }: Props) {
             
           </div>
         )}
+        
+        {service.slug === 'desarrollo-web-a-medida' && (
+          <div className="mt-24 md:mt-32 space-y-24">
+            
+            <div data-animate className="grid gap-12 items-center lg:grid-cols-2 lg:gap-24">
+              <div className="space-y-6">
+                <h2 className="text-3xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent sm:text-4xl">
+                  Tipos de Proyectos que Desarrollo
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  Desde una idea simple hasta un sistema complejo, puedo construir la solución digital que tu negocio necesita para crecer.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {webDevProjectTypes.map((feature, index) => (
+                     <div key={index} className="flex items-start gap-4 p-4 rounded-lg bg-white/5 border border-white/10 hover:border-accent/30 hover:bg-accent/10 transition-all duration-300 transform hover:-translate-y-1">
+                      <feature.icon className="h-8 w-8 text-accent flex-shrink-0 mt-1" />
+                      <div>
+                        <h4 className="font-semibold text-foreground">{feature.title}</h4>
+                        <p className="text-sm text-muted-foreground">{feature.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="relative group mt-8 lg:mt-0">
+                <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur-lg opacity-25 group-hover:opacity-50 transition duration-1000 animate-pulse"></div>
+                <Card className="relative overflow-hidden rounded-xl bg-background/80 backdrop-blur-sm border-white/10 shadow-xl">
+                  <Image src="https://placehold.co/1200x800.png" alt="Ejemplos de aplicaciones web" width={1200} height={800} data-ai-hint="web app examples" className="rounded-lg object-cover" />
+                </Card>
+              </div>
+            </div>
+
+            <div data-animate className="text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent sm:text-4xl">
+                Mi Proceso de Desarrollo
+              </h2>
+              <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground">
+                Sigo un proceso estructurado y transparente para garantizar la calidad y el éxito de cada proyecto, manteniéndote informado en cada etapa.
+              </p>
+              <div className="mt-16 grid gap-8 md:grid-cols-3 lg:grid-cols-5">
+                {webDevProcess.map((step, index) => (
+                  <div key={index} className="flex flex-col items-center text-center">
+                     <div className="flex items-center justify-center p-4 bg-accent/10 rounded-full ring-2 ring-accent/20 mb-4">
+                      <step.icon className="h-8 w-8 text-accent" />
+                    </div>
+                    <h3 className="font-bold text-lg text-foreground mb-2">{step.title}</h3>
+                    <p className="text-sm text-muted-foreground">{step.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
 
          <div data-animate className="mt-20 text-center">
             <Button asChild size="lg" className="bg-gradient-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-opacity shadow-lg shadow-primary/20">
