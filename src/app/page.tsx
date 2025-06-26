@@ -63,7 +63,7 @@ export default function Home() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur-lg opacity-25 group-hover:opacity-50 transition duration-1000 animate-pulse"></div>
                   <Card className="relative overflow-hidden rounded-xl bg-background/80 backdrop-blur-sm border-white/10 shadow-xl">
                     <Image
-                      src={service.imageUrl}
+                      src={service.imageUrl[0]}
                       alt={service.imageAlt}
                       width={1200}
                       height={800}

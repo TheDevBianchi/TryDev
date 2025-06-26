@@ -7,7 +7,7 @@ export type Service = {
   description: string;
   icon: LucideIcon;
   details: string[];
-  imageUrl: string;
+  imageUrl: string[];
   imageAlt: string;
 };
 
@@ -24,7 +24,7 @@ export const services: Service[] = [
       'Panel de administración para gestionar rifas y usuarios',
       'Diseño 100% responsivo y adaptado a tu marca'
     ],
-    imageUrl: 'https://placehold.co/1200x800.png',
+    imageUrl: ['/images/services/rifa-1.png', '/images/services/rifa-2.png'],
     imageAlt: 'Interfaz de una plataforma de rifas online',
   },
   {
@@ -39,7 +39,7 @@ export const services: Service[] = [
       'Generación de reportes de ventas y stock',
       'Integración con puntos de venta (POS)'
     ],
-    imageUrl: 'https://placehold.co/1200x800.png',
+    imageUrl: ['/images/services/inventario-1.png', '/images/services/inventario-2.png'],
     imageAlt: 'Dashboard de un sistema de inventario',
   },
     {
@@ -55,7 +55,7 @@ export const services: Service[] = [
       'Sistemas de recomendación personalizados',
       'Automatización de procesos con IA'
     ],
-    imageUrl: 'https://placehold.co/1200x800.png',
+    imageUrl: ['/images/services/ia-1.png', '/images/services/ia-2.png'],
     imageAlt: 'Visualización de una red neuronal de inteligencia artificial',
   },
     {
@@ -71,7 +71,7 @@ export const services: Service[] = [
       'Integración con APIs y servicios de terceros',
       'Optimización de rendimiento y SEO'
     ],
-    imageUrl: 'https://placehold.co/1200x800.png',
+    imageUrl: ['/images/services/web-1.png'],
     imageAlt: 'Ejemplos de aplicaciones web a medida',
   },
 ];

@@ -338,7 +338,7 @@ export default function ServicePage({ params }: Props) {
               <div className="relative group mt-8 lg:mt-0">
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur-lg opacity-25 group-hover:opacity-50 transition duration-1000 animate-pulse"></div>
                 <Card className="relative overflow-hidden rounded-xl bg-background/80 backdrop-blur-sm border-white/10 shadow-xl">
-                  <Image src="https://placehold.co/1200x800.png" alt="Interfaz de usuario de la plataforma de rifas" width={1200} height={800} data-ai-hint="dashboard ui" className="rounded-lg object-cover" />
+                  <Image src={service.imageUrl[0]} alt="Interfaz de usuario de la plataforma de rifas" width={1200} height={800} data-ai-hint="dashboard ui" className="rounded-lg object-cover" />
                 </Card>
               </div>
             </div>
@@ -347,7 +347,7 @@ export default function ServicePage({ params }: Props) {
                <div className="relative group order-last lg:order-first">
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur-lg opacity-25 group-hover:opacity-50 transition duration-1000 animate-pulse"></div>
                 <Card className="relative overflow-hidden rounded-xl bg-background/80 backdrop-blur-sm border-white/10 shadow-xl">
-                  <Image src="https://placehold.co/1200x800.png" alt="Panel de administración de la plataforma" width={1200} height={800} data-ai-hint="analytics dashboard" className="rounded-lg object-cover" />
+                  <Image src={service.imageUrl[1]} alt="Panel de administración de la plataforma" width={1200} height={800} data-ai-hint="analytics dashboard" className="rounded-lg object-cover" />
                 </Card>
               </div>
               <div className="space-y-6">
@@ -477,7 +477,7 @@ export default function ServicePage({ params }: Props) {
               <div className="relative group mt-8 lg:mt-0">
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur-lg opacity-25 group-hover:opacity-50 transition duration-1000 animate-pulse"></div>
                 <Card className="relative overflow-hidden rounded-xl bg-background/80 backdrop-blur-sm border-white/10 shadow-xl">
-                  <Image src="https://placehold.co/1200x800.png" alt="Dashboard de un sistema de inventario" width={1200} height={800} data-ai-hint="inventory management dashboard" className="rounded-lg object-cover" />
+                  <Image src={service.imageUrl[0]} alt="Dashboard de un sistema de inventario" width={1200} height={800} data-ai-hint="inventory management dashboard" className="rounded-lg object-cover" />
                 </Card>
               </div>
             </div>
@@ -486,7 +486,7 @@ export default function ServicePage({ params }: Props) {
                <div className="relative group order-last lg:order-first">
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur-lg opacity-25 group-hover:opacity-50 transition duration-1000 animate-pulse"></div>
                 <Card className="relative overflow-hidden rounded-xl bg-background/80 backdrop-blur-sm border-white/10 shadow-xl">
-                  <Image src="https://placehold.co/1200x800.png" alt="Panel de administración con analíticas" width={1200} height={800} data-ai-hint="business analytics chart" className="rounded-lg object-cover" />
+                  <Image src={service.imageUrl[1]} alt="Panel de administración con analíticas" width={1200} height={800} data-ai-hint="business analytics chart" className="rounded-lg object-cover" />
                 </Card>
               </div>
               <div className="space-y-6">
@@ -616,7 +616,7 @@ export default function ServicePage({ params }: Props) {
               <div className="relative group mt-8 lg:mt-0">
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur-lg opacity-25 group-hover:opacity-50 transition duration-1000 animate-pulse"></div>
                 <Card className="relative overflow-hidden rounded-xl bg-background/80 backdrop-blur-sm border-white/10 shadow-xl">
-                  <Image src="https://placehold.co/1200x800.png" alt="Visualización de una red neuronal" width={1200} height={800} data-ai-hint="neural network" className="rounded-lg object-cover" />
+                  <Image src={service.imageUrl[0]} alt="Visualización de una red neuronal" width={1200} height={800} data-ai-hint="neural network" className="rounded-lg object-cover" />
                 </Card>
               </div>
             </div>
@@ -625,7 +625,7 @@ export default function ServicePage({ params }: Props) {
                <div className="relative group order-last lg:order-first">
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur-lg opacity-25 group-hover:opacity-50 transition duration-1000 animate-pulse"></div>
                 <Card className="relative overflow-hidden rounded-xl bg-background/80 backdrop-blur-sm border-white/10 shadow-xl">
-                  <Image src="https://placehold.co/1200x800.png" alt="Código y herramientas de desarrollo de IA" width={1200} height={800} data-ai-hint="code editor abstract" className="rounded-lg object-cover" />
+                  <Image src={service.imageUrl[1]} alt="Código y herramientas de desarrollo de IA" width={1200} height={800} data-ai-hint="code editor abstract" className="rounded-lg object-cover" />
                 </Card>
               </div>
               <div className="space-y-6">
@@ -707,7 +707,7 @@ export default function ServicePage({ params }: Props) {
               <div className="relative group mt-8 lg:mt-0">
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-xl blur-lg opacity-25 group-hover:opacity-50 transition duration-1000 animate-pulse"></div>
                 <Card className="relative overflow-hidden rounded-xl bg-background/80 backdrop-blur-sm border-white/10 shadow-xl">
-                  <Image src="https://placehold.co/1200x800.png" alt="Ejemplos de aplicaciones web" width={1200} height={800} data-ai-hint="web app examples" className="rounded-lg object-cover" />
+                  <Image src={service.imageUrl[0]} alt="Ejemplos de aplicaciones web" width={1200} height={800} data-ai-hint="web app examples" className="rounded-lg object-cover" />
                 </Card>
               </div>
             </div>
