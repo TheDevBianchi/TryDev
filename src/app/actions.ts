@@ -32,15 +32,37 @@ export async function submitContactForm(
     };
   }
   
-  // Here you would integrate with your email service (e.g., EmailJS, Resend, SendGrid)
-  // For this example, we'll just simulate a successful submission.
-  console.log("Form data submitted:", validatedFields.data);
+  try {
+    // Enviar datos al webhook de n8n
+    const response = await fetch('https://n8n-x3qy.onrender.com/webhook/74151377-aef6-4368-a047-03e34a99ee5f', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: validatedFields.data.name,
+        email: validatedFields.data.email,
+        message: validatedFields.data.message,
+        timestamp: new Date().toISOString(),
+        source: 'contact-form'
+      }),
+    });
 
-  // Simulate network delay
-  await new Promise(resolve => setTimeout(resolve, 1000));
-  
-  return {
-    message: "¡Gracias por tu mensaje! Te responderé pronto.",
-    status: "success",
-  };
+    if (!response.ok) {
+      throw new Error(`Error del servidor: ${response.status}`);
+    }
+
+    console.log("Datos enviados exitosamente al webhook:", validatedFields.data);
+    
+    return {
+      message: "¡Gracias por tu mensaje! Te responderé pronto.",
+      status: "success",
+    };
+  } catch (error) {
+    console.error("Error al enviar datos al webhook:", error);
+    return {
+      message: "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.",
+      status: "error",
+    };
+  }
 }
