@@ -54,9 +54,28 @@ export function ContactForm() {
           ¿Listo para empezar?
         </h2>
         <p className="max-w-[800px] mx-auto text-muted-foreground md:text-xl/relaxed mt-4">
-          Hablemos sobre cómo puedo ayudarte a llevar tu proyecto al siguiente nivel.
+          Si quieres contactarte conmigo, puedes escribirme vía WhatsApp o Instagram.
         </p>
       </div>
+      <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-8">
+        <a
+          href="https://wa.me/584127113895" // Reemplaza con tu número real
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center px-6 py-3 bg-green-500 text-white rounded-lg font-semibold shadow-lg hover:bg-green-600 transition-colors duration-300"
+        >
+          WhatsApp
+        </a>
+        <a
+          href="https://instagram.com/rafaelaaronbianchi" // Reemplaza con tu usuario real
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-lg font-semibold shadow-lg hover:opacity-90 transition-all duration-300"
+        >
+          Instagram
+        </a>
+      </div>
+      {/*
       <form ref={formRef} action={formAction} className="space-y-10 text-left">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
           <div className="relative group">
@@ -112,6 +131,7 @@ export function ContactForm() {
           <SubmitButton />
         </div>
       </form>
+      */}
     </div>
   );
 }

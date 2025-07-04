@@ -1,5 +1,3 @@
-
-
 import { notFound } from 'next/navigation';
 import { services, getServiceBySlug } from '@/lib/services';
 import type { Metadata } from 'next';
@@ -770,6 +768,36 @@ export default function ServicePage({ params }: Props) {
               <Link href="/contact">Discutir Tu Proyecto</Link>
             </Button>
           </div>
+
+        {/* Sección de contacto al final */}
+        <section className="mt-32 mb-16" data-animate>
+          <div className="max-w-2xl mx-auto text-center bg-secondary/20 border border-white/10 rounded-2xl p-8 md:p-12 backdrop-blur-sm">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent mb-4">
+              ¿Listo para contactarme?
+            </h2>
+            <p className="max-w-[800px] mx-auto text-muted-foreground md:text-xl/relaxed mt-4">
+              Si quieres contactarte conmigo, puedes escribirme vía WhatsApp o Instagram.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-8">
+              <a
+                href="https://wa.me/584127113895"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-6 py-3 bg-green-500 text-white rounded-lg font-semibold shadow-lg hover:bg-green-600 transition-colors duration-300"
+              >
+                WhatsApp
+              </a>
+              <a
+                href="https://instagram.com/rafaelaaronbianchi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-lg font-semibold shadow-lg hover:opacity-90 transition-all duration-300"
+              >
+                Instagram
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   );
