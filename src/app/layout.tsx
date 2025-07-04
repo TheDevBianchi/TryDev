@@ -5,6 +5,7 @@ import { Footer } from '@/components/footer';
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from '@/lib/utils';
 import { SmoothScroll } from '@/components/smooth-scroll';
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: 'TryDev | Desarrollo de Software a Medida',
@@ -29,6 +30,7 @@ export default function RootLayout({
         <div className="flex-1">{children}</div>
         <Footer />
         <Toaster />
+        <Analytics />
       </body>
     </html>
   );
