@@ -35,23 +35,6 @@ export function Footer() {
               </ul>
             </div>
           </div>
-          
-          <div className="flex flex-col gap-4 md:items-end">
-            <div>
-              <h3 className="text-sm font-semibold tracking-wider uppercase text-foreground">Social</h3>
-              <div className="mt-4 flex items-center gap-4">
-                <Link href="#" aria-label="Github" target="_blank" rel="noopener noreferrer">
-                  <Github className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
-                </Link>
-                <Link href="#" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
-                  <Twitter className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
-                </Link>
-                <Link href="#" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
-                </Link>
-              </div>
-            </div>
-          </div>
         </div>
         <div className="mt-12 border-t border-white/10 pt-8 text-center">
           <p className="text-sm text-muted-foreground">
